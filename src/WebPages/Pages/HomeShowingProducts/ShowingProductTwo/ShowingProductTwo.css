@@ -1,0 +1,18 @@
+.TextBody{
+    display: flex;
+    justify-content: space-evenly;
+    font-weight: bold;
+}
+.priceOnes{
+    color: lightgray;
+    text-decoration: line-through;
+    -webkit-user-select: none;
+}
+
+.imagBody{
+    padding-bottom: 10px;
+    transition: all 0.5s ease-out;
+}
+.imagBody:hover, .imagBody:focus{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}

@@ -1,0 +1,11 @@
+.myHeading{
+    width: 100vw;
+    background-color: black;
+    color: lightgray;
+}
+#leftSide{
+    justify-content: center;
+}
+.icons i{
+    padding-left: 20px;
+}

@@ -1,0 +1,14 @@
+.info-timeline{
+    background-color: #042825;
+    color: white;
+}
+.allInfor{
+    display: flex;
+    text-align: left;
+}
+.infoText{
+    padding-left: 30px;
+}
+.infoIcon i{
+    color: orangered;
+}

@@ -1,0 +1,27 @@
+.anchorLink{
+text-decoration: none;
+margin-left: 30px;
+color: rgb(139, 139, 139);
+font-size: 18px;
+}
+.user_cart i{
+    padding-left: 20px;
+}
+.userList{
+    /* border: 2px solid black; */
+    padding: 10px;
+    justify-content: center;
+    margin-left: 10px;
+}
+.ThirdContainer{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+}
+.userList{
+    color: rgb(194, 17, 17);
+    transition: all 0.5s ease-out;
+}
+.userList:hover, .userList:focus{
+    color: black;
+}

@@ -1,0 +1,9 @@
+.headingss{
+   overflow: hidden;
+}
+.hovrBlog{
+    transition: all 0.5s ease-out;
+}
+  .hovrBlog:hover, .hovrBlog:focus{
+    transform: scale(1.2);
+  }

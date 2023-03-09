@@ -1,0 +1,62 @@
+.footer{
+    background-color: #042825;
+    color: white;
+}
+.myCont{
+    border-bottom: 1px solid gray;
+}
+.Commerce{
+    color: orangered;
+}
+.pargagraph{
+    text-align: left;
+}
+.iconic i{
+    padding-left: 20px;
+}
+.iconic {
+  text-align: left;
+}
+.links{
+    text-align: left;
+
+}
+.links a{
+    text-align: left;
+    text-decoration: none;
+    display: block;
+    color: white;
+    margin-top: 10px;
+}
+.storeInfo{
+    display: flex;
+}
+.iconics{
+    padding-right: 10px;
+}
+.textInformations{
+    text-align: left;
+   
+}
+.myHI{
+    text-align: left;
+}
+.iconics i{
+    color: orangered;
+}
+.links a{
+    color: gray;
+    font-weight: 600;
+    transition: all 0.5s ease-out;
+}
+.links a:hover, .links a:focus{
+    color: rgb(255, 17, 17);
+    font-weight: 600;
+}
+.textInformations p{
+    color: gray;
+    font-weight: 600;
+}
+.pargagraph{
+    color: gray; 
+}

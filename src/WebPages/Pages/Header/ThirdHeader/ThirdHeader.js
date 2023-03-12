@@ -10,7 +10,7 @@ const ThirdHeader = () => {
                     <Col xs={12} md={6} lg={6}>
                     <div className="myNavbar">
                       <Link to="/" className='anchorLink'>Home</Link>
-                      <Link className='anchorLink'>Shopping</Link>
+                      <Link to="/mens" className='anchorLink'>Mens</Link>
                       <Link className='anchorLink'>Blog</Link>
                       <Link className='anchorLink'>Contact</Link>
                     </div>

@@ -14,7 +14,6 @@ const BlogDetails = ({bloglist}) => {
            <Link to={`/blogs/${_id}`}> <h4>{blogName}</h4></Link>
         </div>
         </Col>
-     
     );
 };
 

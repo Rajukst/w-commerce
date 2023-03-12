@@ -1,8 +1,9 @@
 import React from 'react';
 import { Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import "./ShowingProductTwo.css"
 const ShowingProductTwo = ({productlist}) => {
-    const {name, priceOne, priceTwo, image, description}= productlist;
+    const {name, priceOne, priceTwo, image, _id}= productlist;
     return (
         <>
         <Col>
@@ -10,7 +11,7 @@ const ShowingProductTwo = ({productlist}) => {
             <div className="headings">
                 <img className='img-fluid' src={image} alt="" />
             </div>
-            <h6>{name}</h6>
+           <Link to={`/home-product/${_id}`}> <h6>{name}</h6></Link>
             <div className="TextBody">
                 <div className="priceOne">
                     <p className='priceOnes'>{priceOne}</p>

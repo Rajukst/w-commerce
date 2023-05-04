@@ -8,7 +8,6 @@
 .pricesTwo{
     text-decoration: line-through;
     color: lightgray;
-    -webkit-user-select: none;
 }
 /* .rightItems *{
     padding-top: 10px;

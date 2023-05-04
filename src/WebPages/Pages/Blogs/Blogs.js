@@ -18,14 +18,15 @@ fetch("http://localhost:5000/blogs")
             <h1>Latest News Feed</h1>
         <Row xs={1} md={3} lg={3} className="g-4">
         {
-            blogs.map(getBlogs=> <BlogDetails
+            blogs.slice(0,3).map(getBlogs=> <BlogDetails
             key={getBlogs._id}
             bloglist={getBlogs}
             ></BlogDetails> )
         }
   </Row>
+  <Link to="/blogs"><button className='mt-5 productBTN'>View All Blogs</button></Link>
         </Container>
-        <Link to="/blogs"><button className='mt-5 productBTN'>View All Blogs</button></Link>
+        
         </>
     );
 };

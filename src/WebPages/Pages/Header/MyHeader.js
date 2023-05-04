@@ -16,7 +16,6 @@ const MyHeader = () => {
           <i className="fa-brands fa-twitter"></i>
           <i className="fa-brands fa-linkedin-in"></i>
           <i className="fa-brands fa-instagram"></i>
-
           </div>
           </Col>
         </Row>

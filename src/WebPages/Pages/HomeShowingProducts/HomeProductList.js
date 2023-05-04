@@ -17,14 +17,14 @@ const HomeProductList = () => {
             <h1>Trending Products</h1>
         <Row xs={1} s={2} md={2} lg={4} className="g-4">
         {
-            products.map(getProducts=> <ShowingProductTwo
+            products.slice(0,4).map(getProducts=> <ShowingProductTwo
             key={getProducts._id}
             productlist={getProducts}
             ></ShowingProductTwo> )
         }
   </Row>
         </Container>
-        <Link><button className='mt-5 productBTN'>View All Product</button></Link>
+        <Link to="/products"><button className='mt-5 productBTN'>View All Product</button></Link>
         </>
     );
 };

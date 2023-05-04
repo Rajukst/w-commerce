@@ -9,10 +9,10 @@ const SecondHeader = () => {
     <>
       <Container className="mt-3">
         <Row>
-          <Col xs={12} md={4} lg={4} >
-          <img src={Logo} alt="" height="70px" width="150px" />
+          <Col xs={12} md={4} lg={4}>
+            <img src={Logo} alt="" height="70px" width="150px" />
           </Col>
-          <Col xs={12} md={4} lg={4} >
+          <Col xs={12} md={4} lg={4}>
             <div className="mobileSection">
               <div className="iconsItem">
                 <img src={mobilePhoto} alt="" height="60px" width="35px" />
@@ -23,7 +23,7 @@ const SecondHeader = () => {
               </div>
             </div>
           </Col>
-          <Col xs={12} md={4} lg={4} >
+          <Col xs={12} md={4} lg={4}>
             <form>
               <input type="text" name="search" placeholder="Search.." />
             </form>

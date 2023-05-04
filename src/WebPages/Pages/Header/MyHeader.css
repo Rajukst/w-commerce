@@ -5,7 +5,11 @@
 }
 #leftSide{
     justify-content: center;
+    margin-top: 5px;
 }
 .icons i{
     padding-left: 20px;
+}
+.icons{
+  margin-top: 5px;
 }

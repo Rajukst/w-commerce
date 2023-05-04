@@ -9,8 +9,8 @@ const SingleDynamicBlog = () => {
         fetch(`http://localhost:5000/blogs/${id}`)
         .then(res=>res.json())
         .then(data=>setMyBlogs(data))
-    },[])
-
+    },[]);
+    
     return (
         <Container>
             <img className='img-fluid' src={myBlogs.blogImage} alt="" />

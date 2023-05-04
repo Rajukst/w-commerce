@@ -1,8 +1,8 @@
 import React from 'react';
 import { Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import "./ShowingProductTwo.css"
-const ShowingProductTwo = ({productlist}) => {
+
+const SetAllProducts = ({productlist}) => {
     const {name, priceOne, priceTwo, image, _id}= productlist;
     return (
         <>
@@ -30,9 +30,7 @@ const ShowingProductTwo = ({productlist}) => {
         </div>
         </Col>
         </>
-        
-        
     );
 };
 
-export default ShowingProductTwo;
+export default SetAllProducts;

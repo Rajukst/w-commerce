@@ -25,3 +25,17 @@ font-size: 18px;
 .userList:hover, .userList:focus{
     color: black;
 }
+.wishList{
+    color: rgb(194, 17, 17);
+    transition: all 0.5s ease-out;
+}
+.wishList:hover, .wishList:focus{
+    color: black;
+}
+.usrLogin{
+    color: rgb(194, 17, 17);
+    transition: all 0.5s ease-out;
+}
+.usrLogin:hover, .usrLogin:focus{
+    color: black;
+}

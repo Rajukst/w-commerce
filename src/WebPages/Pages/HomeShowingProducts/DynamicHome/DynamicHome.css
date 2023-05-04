@@ -9,9 +9,9 @@
     text-decoration: line-through;
     color: lightgray;
 }
-/* .rightItems *{
-    padding-top: 10px;
-} */
+.rightItems *{
+    padding-top: 5px;
+}
 .cartInput{
     width: 70px;
     height: 40px;

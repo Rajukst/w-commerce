@@ -1,31 +1,24 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import BlogDetails from './BlogDetails/BlogDetails';
+import { Button, Card, Container, Row } from 'react-bootstrap';
+
 
 const Blogs = () => {
-    const [blogs, setBlogs]= useState([])
-    useEffect(()=>{
-fetch("http://localhost:5000/blogs")
-.then(res=>res.json())
-.then(data=>setBlogs(data))
 
-    },[])
     return (
           <>
-        <Container>
-        <h6>— Fashion Blog</h6>
-            <h1>Latest News Feed</h1>
-        <Row xs={1} md={3} lg={3} className="g-4">
-        {
-            blogs.slice(0,3).map(getBlogs=> <BlogDetails
-            key={getBlogs._id}
-            bloglist={getBlogs}
-            ></BlogDetails> )
-        }
-  </Row>
-  <Link to="/blogs"><button className='mt-5 productBTN'>View All Blogs</button></Link>
-        </Container>
+
+    <Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src="holder.js/100px180" />
+      <Card.Body>
+        <Card.Title>Card Title</Card.Title>
+        <Card.Text>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+        <Button variant="primary">Go somewhere</Button>
+      </Card.Body>
+    </Card>
+
         
         </>
     );

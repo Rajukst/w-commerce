@@ -9,9 +9,9 @@ const BlogDetails = ({bloglist}) => {
                <Col>
         <div className="imagBodys">
             <div className="headingss">
-                <img className='img-fluid hovrBlog' src={blogImage} alt="" />
+                <img className='img-fluid hovrBlog pb-3' src={blogImage} alt="" />
             </div>
-           <Link to={`/blogs/${_id}`}> <h4>{blogName}</h4></Link>
+           <Link className='myBlg' to={`/blogs/${_id}`}> <h5>{blogName}</h5></Link>
         </div>
         </Col>
     );

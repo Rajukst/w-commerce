@@ -23,7 +23,7 @@ const ThirdHeader = () => {
           </Col>
           <Col xs={12} md={6} lg={6}>
             <div className="user_cart">
-              <Link to="/login">
+              <Link to="/dashboard">
                 <i class="fa-solid fa-user usrLogin"></i>
               </Link>
               <Link to="/wishlist">

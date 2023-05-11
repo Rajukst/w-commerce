@@ -15,6 +15,13 @@ import Registration from './WebPages/Registration/Registration';
 import { Toaster } from 'react-hot-toast';
 import PrivateRoute from './WebPages/Pages/PrivateRoute/PrivateRoute';
 import UserDashboard from './WebPages/UserDashBoard/UserDashboard';
+import MyOrders from './WebPages/UserDashBoard/MyOrders/MyOrders';
+import Reviews from './WebPages/UserDashBoard/Reviews/Reviews';
+import Address from './WebPages/UserDashBoard/Address/Address';
+import AccountInfo from './WebPages/UserDashBoard/AccountInfo/AccountInfo';
+import ChangePassword from './WebPages/UserDashBoard/ChangePassword/ChangePassword';
+import AllBlogs from './WebPages/Pages/Blogs/AllBlogs/AllBlogs';
+import SingleDynamicBlog from './WebPages/Pages/Blogs/BlogDetails/SingleDynamicBlog/SingleDynamicBlog';
 
 
 function App() {
@@ -26,18 +33,19 @@ function App() {
      <Route path="/" element={<MainHome />}/>
      <Route path="/add-product" element={<AddProduct />}/>
      <Route path="/cart" element={<Cart/>}/>
-     <Route
-        path="/dashboard"
-        element={
-     
-          <PrivateRoute><UserDashboard/></PrivateRoute>
-
-        }
-      />
      <Route path="/home-product/:id" element={<DynamicHome/>}/>
      <Route path="/products" element={<AllProducts/>}/>
      <Route path="/login" element={<Login/>}/>
+     <Route path='/dashboard' element={<PrivateRoute><UserDashboard/></PrivateRoute>}>
+      <Route path='review' element={<Reviews/>}/>
+      <Route path='address' element={<Address/>}/>
+      <Route path='account' element={<AccountInfo/>}/>
+      <Route path='cngpassword' element={<ChangePassword/>}/>
+      <Route path='orders' element={<MyOrders/>}/>
+     </Route>
      <Route path="/register" element={<Registration/>}/>
+     <Route path="/blogs" element={<AllBlogs/>}/>
+     <Route path="/blogs/:id" element={<SingleDynamicBlog/>}/>
      </Routes>
      <Footer/>
      <CopyRightInfo/>

@@ -1,11 +1,11 @@
 import React from 'react';
-import Blogs from '../Pages/Blogs/Blogs';
 import Collections from '../Pages/Collections/Collections';
 import DateTimer from '../Pages/DateTimer/DateTimer';
 import HomeCarosul from '../Pages/HomeCarosul/HomeCarosul';
 import HomeProductList from '../Pages/HomeShowingProducts/HomeProductList';
 import Information from '../Pages/Shipping_Support/Information';
-import TopSeller from '../Pages/TopSeller/TopSeller';
+import HomeBlogs from '../Pages/Blogs/HomeBlogs/HomeBlogs';
+
 
 const MainHome = () => {
     return (
@@ -13,10 +13,11 @@ const MainHome = () => {
             <HomeCarosul></HomeCarosul>
             <HomeProductList></HomeProductList>
             <Collections></Collections>
+            <HomeBlogs></HomeBlogs>
+              <DateTimer></DateTimer>
             <Information></Information>
             {/* <TopSeller></TopSeller> */}
-            <DateTimer></DateTimer>
-            <Blogs></Blogs>
+          
         </div>
     );
 };

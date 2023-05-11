@@ -22,7 +22,6 @@ const AllBlogs=()=>{
             ></SetAllBlogs> )
         }
   </Row>
- 
         </Container>
         
         </>

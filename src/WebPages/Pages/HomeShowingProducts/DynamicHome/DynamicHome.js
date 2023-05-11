@@ -42,7 +42,12 @@ const DynamicHome = () => {
               <button className="cartButtons">+</button>
             </div>
             <div className="selectedItems">
-              <p>this is selected items</p>
+            <div class="dropdown">
+  <button>HubSpot Resources</button>
+  <div class="dropdown-content">
+<p>{products.size}</p>
+  </div>
+</div>
             </div>
           </div>
           <div className="cartAndOtherBtn">

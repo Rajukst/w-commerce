@@ -18,12 +18,12 @@ const handleLogOut=()=>{
 }
   return (
     <>
-      <Container className="mt-3">
+      <Container fluid className="mt-3">
         <Row>
-          <Col xs={12} md={4} lg={4}>
+          <Col xs={12} md={4} lg={3}>
             <img src={Logo} alt="" height="70px" width="150px" />
           </Col>
-          <Col xs={12} md={4} lg={4}>
+          <Col xs={12} md={4} lg={3}>
             <div className="mobileSection">
               <div className="iconsItem">
                 <img src={mobilePhoto} alt="" height="60px" width="35px" />
@@ -34,16 +34,17 @@ const handleLogOut=()=>{
               </div>
             </div>
           </Col>
-          <Col xs={12} md={4} lg={4}>
+          <Col xs={12} md={4} lg={3}>
             <form>
-              <input type="text" name="search" placeholder="Search.." />
+              <input name="search" placeholder="Search.." />
             </form>
           </Col>
-          {user?.email &&  <div className="wellcome-div"> <span className="wellcome-span me-1">WellCome: </span> {user.email}</div>}
+         <Col xs={12} md={4} lg={3} className="logOutCol">
+         {user?.email &&  <div className="wellcome-div"> <span className="wellcome-span me-1">WellCome: </span> {user.email}</div>}
           {user?.email ? (
-          <Button onClick={handleLogOut}  variant="outline-info" className="me-5">
+          <button onClick={handleLogOut}  variant="outline-info" className="logOutBtn">
             LogOut
-          </Button>
+          </button>
         ) : (
           <Link to="/login">
             <Button variant="outline-info" className="me-5">
@@ -51,6 +52,7 @@ const handleLogOut=()=>{
             </Button>
           </Link>
         )}
+         </Col>
         </Row>
       </Container>
       <ThirdHeader></ThirdHeader>

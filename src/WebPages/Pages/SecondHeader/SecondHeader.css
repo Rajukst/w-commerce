@@ -36,3 +36,6 @@
     font-size: 18px;
     color: rgb(148, 148, 148);
 }
+.logOutCol{
+  display: flex;
+}

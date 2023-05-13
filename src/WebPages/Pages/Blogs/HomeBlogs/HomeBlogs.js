@@ -14,7 +14,7 @@ const HomeBlogs = () => {
       <h6>— Fashion Blog</h6>
       <h1>Latest News Feed</h1>
       <Row xs={1} md={3} lg={3} className="g-4">
-        {allBlogs.slice(0, 3).map((getAllBlogs) => (
+        {allBlogs.map((getAllBlogs) => (
           <AllHomeBlogs
             key={getAllBlogs._id}
             blogs={getAllBlogs}

@@ -15,10 +15,11 @@ const ThirdHeader = () => {
               <Link to="/mens" className="anchorLink">
                 Mens
               </Link>
+              <Link to="/womens" className="anchorLink">Womens</Link>
               <Link to="/blogs" className="anchorLink">
                 Blog
               </Link>
-              <Link className="anchorLink">Contact</Link>
+             
             </div>
           </Col>
           <Col xs={12} md={6} lg={6}>

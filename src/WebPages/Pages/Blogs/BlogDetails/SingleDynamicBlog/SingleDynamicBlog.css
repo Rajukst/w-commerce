@@ -1,0 +1,118 @@
+.headingInfo h1{
+    text-align: left;
+}
+.headingInfo p{
+    text-align: justify;
+}
+.statusInfo{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.commentInfo h1{
+    text-align: left;
+    letter-spacing: 2px;
+}
+.productInput{
+    width: 70%;
+    height: 45px;
+}
+
+.inputTitle{
+    text-align: left;
+    margin-bottom: 20px;
+}
+.inputTitle textarea{
+width: 70%;
+}
+
+.infoHead{
+    text-align: left;
+}
+.addProduct-image{
+    background-color: rgb(247, 247, 247);
+}
+.mainInfo{
+    background-color: white;
+    padding: 30px;
+
+}
+.rightSide{
+    margin: 20px;
+    background-color: rgb(247, 247, 247);
+}
+.gnrlInfo{
+    text-align: left;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px dotted black;
+}
+.editButton{
+    border: none;
+    background: none;
+}
+.dltButton{
+    border: none;
+    background: none;
+}
+.productNameInfo{
+    text-align: center;
+    margin-top: 10px;
+}
+.shopBTN{
+    align-items:flex-start;
+    border: none;
+    background: none;
+    margin-left: 15px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.5s ease-out;
+    font-weight: 600;
+}
+.shopBTN:hover, .shopBTN:focus{
+    background-color: orangered;
+    color: black;
+}
+.commentHead{
+    display: flex;
+}
+.commenHeading{
+    text-align: left;
+}
+.statusName{
+    font-size: 18px;
+    font-weight: 600;
+}
+.statuss{
+    font-size: 23px;
+    font-weight: 600;
+    color: orangered;
+}
+.replyBtn{
+    background: none;
+    border: none;
+    background-color: orangered;
+    padding: 8px 20px;
+    border-radius: 5px;
+    transition: all 0.5s ease-out;
+}
+.replyBtn:hover, .replyBtn:focus{
+    background-color: black;
+    color: rgb(255, 255, 255);
+}
+.commenHeading h1{
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px dotted lightgray;
+}
+.postCMNT{
+    text-align: left;
+    margin-left: 16px;
+}

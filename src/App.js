@@ -3,7 +3,6 @@ import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import MyHeader from './WebPages/Pages/Header/MyHeader';
 import MainHome from './WebPages/Home/MainHome';
-import AddProduct from './WebPages/AddProducts/AddProduct';
 import DynamicHome from './WebPages/Pages/HomeShowingProducts/DynamicHome/DynamicHome';
 import Mens from './WebPages/Pages/AllCatagories/Mens/Mens';
 import Cart from './WebPages/Pages/AllCatagories/Cart/Cart';
@@ -31,7 +30,6 @@ function App() {
      <MyHeader></MyHeader>
      <Routes>
      <Route path="/" element={<MainHome />}/>
-     <Route path="/add-product" element={<AddProduct />}/>
      <Route path="/cart" element={<Cart/>}/>
      <Route path="/home-product/:id" element={<DynamicHome/>}/>
      <Route path="/products" element={<AllProducts/>}/>
@@ -44,6 +42,7 @@ function App() {
       <Route path='orders' element={<MyOrders/>}/>
      </Route>
      <Route path="/register" element={<Registration/>}/>
+     <Route path="/mens" element={<Mens/>}/>
      <Route path="/blogs" element={<AllBlogs/>}/>
      <Route path="/blogs/:id" element={<SingleDynamicBlog/>}/>
      </Routes>

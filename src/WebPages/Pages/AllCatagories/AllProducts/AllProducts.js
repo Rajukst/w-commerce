@@ -14,7 +14,7 @@ const AllProducts = () => {
       <Container>
         <h6>—New Collection</h6>
         <h1>Trending Products</h1>
-        <Row xs={1} md={3} lg={3} className="g-4">
+        <Row xs={1} md={3} lg={4} className="g-4">
           {allProducts.map((getBlogs) => (
             <SetAllProducts
               key={getBlogs._id}

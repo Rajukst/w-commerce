@@ -19,7 +19,7 @@
 .cartButtons{
     background: none;
     border: none;
-    width: 50px;
+    width: 30px;
     height: 30px;
 }
 .cartAndOther{
@@ -31,8 +31,8 @@
 }
 .shareBox{
     display: flex;
-    padding-bottom: 30px;
-    padding-top: 30px;
+    padding-bottom: 20px;
+    padding-top: 20px;
     border-top: 1px dotted lightgray;
     border-bottom: 1px dotted lightgray;
 }
@@ -41,29 +41,4 @@
 }
 .iconics {
   text-align: left;
-
 }
-.dropdown {
-    display: inline-block;
-    position: relative;
-  }
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    width: 100%;
-    overflow: auto;
-    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
-  }
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-  .dropdown-content a {
-    display: block;
-    color: #000000;
-    padding: 5px;
-    text-decoration: none;
-  }
-  .dropdown-content a:hover {
-    color: #FFFFFF;
-    background-color: #00A4BD;
-  }

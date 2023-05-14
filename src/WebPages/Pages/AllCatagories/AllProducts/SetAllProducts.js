@@ -3,7 +3,7 @@ import { Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const SetAllProducts = ({productlist}) => {
-    const {name, priceOne, priceTwo, image, _id}= productlist;
+    const {title, slug, shortDes, regularPrice, _id, salePrice,image}= productlist;
     return (
         <>
         <Col>
@@ -11,13 +11,13 @@ const SetAllProducts = ({productlist}) => {
             <div className="headings">
                 <img className='img-fluid' src={image} alt="" />
             </div>
-           <Link to={`/home-product/${_id}`}> <h6>{name}</h6></Link>
+           <Link to={`/home-product/${_id}`}> <h6>{title}</h6></Link>
             <div className="TextBody">
                 <div className="priceOne">
-                    <p className='priceOnes'>${priceOne}</p>
+                <p>${salePrice}</p>   
                 </div>
                 <div className="priceOne">
-                    <p>${priceTwo}</p>
+                <p className='priceOnes'>${regularPrice}</p>
                 </div>
             </div>
             <div className="reviews">

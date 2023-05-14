@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import "./DynamicHome.css";
 
@@ -12,13 +12,19 @@ const DynamicHome = () => {
       .then((data) => setProducts(data));
   }, []);
   return (
+    <>
+       <div className="main-containers">
     <Container className="mt-5 mb-5">
-      <div className="main-containers">
-        <div className="leftItems me-3">
+   
+        <Row>
+          <Col>
+          <div className="leftItems me-3">
           <img className="img-fluid" src={products.image} alt="" />
         </div>
-        <div className="rightItems mt-5">
-          <h2>{products.name}</h2>
+          </Col>
+          <Col>
+          <div className="rightItems mt-2">
+          <h2>{products.title}</h2>
           <div className="stars">
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
@@ -27,14 +33,20 @@ const DynamicHome = () => {
             <i class="fa-solid fa-star"></i>
           </div>
           <div className="prices">
-            <h3>${products.priceOne}</h3>
-            <h5 className="mt-2 ps-4 pricesTwo">${products.priceTwo}</h5>
+            <h3>${products.salePrice}</h3>
+            <h5 className="mt-2 ps-4 pricesTwo">${products.regularPrice}</h5>
           </div>
           <div className="availablity">
-            <h6>Availablity:</h6>
-            <h6>Catagories:</h6>
+            <h6>Availablity: {products.catagory}</h6>
+            <h6>Catagories:{products.selSize}</h6>
           </div>
-          <div className="productDes">{products.description}</div>
+          <div className="shortDes">
+            <p>Short Info: {products.shortDes}</p>
+          </div>
+          {/* <div className="productDes">
+            <p dangerouslySetInnerHTML={{ __html: products.editor }}></p>
+            {products.description}
+          </div> */}
           <div className="cartAndOther">
             <div className="cartFunctions">
               <button className="cartButtons">-</button>
@@ -42,12 +54,12 @@ const DynamicHome = () => {
               <button className="cartButtons">+</button>
             </div>
             <div className="selectedItems">
-            <div class="dropdown">
-  <button>HubSpot Resources</button>
-  <div class="dropdown-content">
-<p>{products.size}</p>
-  </div>
-</div>
+              <div class="dropdown">
+                <button>HubSpot Resources</button>
+                <div class="dropdown-content">
+                  <p>{products.size}</p>
+                </div>
+              </div>
             </div>
           </div>
           <div className="cartAndOtherBtn">
@@ -62,21 +74,40 @@ const DynamicHome = () => {
               </button>
             </div>
           </div>
-          <div className="shareBox mt-5">
+          <div className="shareBox mt-3 mb-3">
             <div className="shareText">
-              <h5>Share it On:</h5>
+              <h6>Share it On:</h6>
             </div>
             <div className="iconics">
-            <i className="fa-brands fa-facebook fa-2x"style={{color: "#4267B2"}}></i>
-              <i class="fa-brands fa-instagram fa-2x"style={{color: "#e95950"}}></i>
-              <i class="fa-brands fa-twitter fa-2x"style={{color: "#00acee"}}></i>
-              <i class="fa-brands fa-youtube fa-2x"style={{color: "#FF0000"}}></i>
-              <i class="fa-brands fa-linkedin-in fa-2x"style={{color: "#0072b1"}}></i>
+              <i
+                className="fa-brands fa-facebook"
+                style={{ color: "#4267B2" }}
+              ></i>
+              <i
+                class="fa-brands fa-instagram"
+                style={{ color: "#e95950" }}
+              ></i>
+              <i
+                class="fa-brands fa-twitter"
+                style={{ color: "#00acee" }}
+              ></i>
+              <i
+                class="fa-brands fa-youtube"
+                style={{ color: "#FF0000" }}
+              ></i>
+              <i
+                class="fa-brands fa-linkedin-in "
+                style={{ color: "#0072b1" }}
+              ></i>
             </div>
           </div>
         </div>
-      </div>
+          </Col>
+        </Row>
+     
     </Container>
+    </div>
+    </>
   );
 };
 export default DynamicHome;

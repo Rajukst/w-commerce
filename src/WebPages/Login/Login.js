@@ -1,33 +1,39 @@
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../Context/AuthProvider";
 import { toast } from "react-hot-toast";
 import { Col, Container, Row } from "react-bootstrap";
 import { Controls, Player } from "@lottiefiles/react-lottie-player";
 import "./Login.css"
 import userPhoto from "../../Assets/Icons/user.png"
+import { useDispatch, useSelector } from "react-redux";
+import { googleLogin, loginUser } from "../../redux/allFeatures/Auth/authSlice";
+import { useEffect } from "react";
 const Login = () => {
   const { register, handleSubmit } = useForm();
-  const [error, setError] = useState("");
-  const { loginUser } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   const destination = location.state?.from?.pathname || "/";
-  const loginSubmit = (e) => {
-    loginUser(e.email, e.password)
-      .then((result) => {
-        const user = result.user;
-        console.log(user);
-        toast.success("Login Success!");
-        setError("");
-        navigate(destination, { replace: true });
-      })
-      .catch((err) => {
-        setError(err);
-      });
+  const dispatch= useDispatch()
+  const {isLoading, email, isError, error}= useSelector(state=>state.auth)
+  const loginSubmit = ({email, password}) => {
+        dispatch(loginUser({email, password}))
+       
   };
-
+  useEffect(()=>{
+    if(!isLoading && email){
+      navigate(destination, { replace: true });
+    }
+  },[isLoading, email])
+  const handleGoogleLogin=()=>{
+    dispatch(googleLogin())
+  }
+// error message showing UI
+useEffect(()=>{
+if(isError){
+  toast.error(error)
+}
+},[isError, error])
   return (
     <div className="login-div">
       <h1 className="mt-3">User login </h1>
@@ -77,7 +83,6 @@ const Login = () => {
                   </div>
                 </div>
                 {/* errors will return when field validation fails  */}
-                {error && toast.error("something went wrong")}
                 <div className="submitInfo">
                 <input className="submitInf" type="submit" value="Login" />
                 </div>
@@ -88,6 +93,8 @@ const Login = () => {
                   Login
                   <Link to="/register">here</Link>
                 </p>
+                <p>Or</p>
+                <button onClick={handleGoogleLogin}>Sign In With Google</button>
               </div>
             </div>
           </Col>

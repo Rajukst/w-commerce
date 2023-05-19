@@ -2,10 +2,8 @@ import React, { useContext } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import "./UserDashboard.css";
 import { Link, Outlet } from "react-router-dom";
-import { AuthContext } from "../../Context/AuthProvider";
 
 const UserDashboard = () => {
-  const {logOut}= useContext(AuthContext);
   return (
     <>
    <Container fluid className="homeCarsuls mb-2">
@@ -19,7 +17,7 @@ const UserDashboard = () => {
                  <Link to="address" className="myLink"><h6>Address</h6></Link>
                  <Link to="account" className="myLink"><h6>Account Details</h6></Link>
                  <Link to="cngpassword" className="myLink"><h6>Change Password</h6></Link>
-                 <button onClick={logOut} className="LogOutButton">Log Out</button>
+                 <button className="LogOutButton">Log Out</button>
                 </div>
             </div>
       </Col>

@@ -1,13 +1,12 @@
 import React, { useContext } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
-import { AuthContext } from '../../../Context/AuthProvider';
-import { toast } from 'react-hot-toast';
 import { Button, Spinner } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
 
 const PrivateRoute = ({children}) => {
-    const {user, loading}= useContext(AuthContext)
+const {isLoading, email}= useSelector(state=>state.auth)
     const location= useLocation()
-    if(loading){
+    if(isLoading){
         return <Button variant="primary" disabled>
         <Spinner
           as="span"
@@ -19,7 +18,7 @@ const PrivateRoute = ({children}) => {
         Loading...
       </Button>
     }
-    if(user){
+    if(email){
         return children;
     }
     return <Navigate to="/login" state={{from: location}} replace></Navigate>

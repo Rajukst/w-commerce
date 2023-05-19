@@ -21,9 +21,25 @@ import AccountInfo from './WebPages/UserDashBoard/AccountInfo/AccountInfo';
 import ChangePassword from './WebPages/UserDashBoard/ChangePassword/ChangePassword';
 import AllBlogs from './WebPages/Pages/Blogs/AllBlogs/AllBlogs';
 import SingleDynamicBlog from './WebPages/Pages/Blogs/BlogDetails/SingleDynamicBlog/SingleDynamicBlog';
-
+import { useEffect } from 'react';
+import { onAuthStateChanged } from 'firebase/auth';
+import auth from './Firebase/firebase.config';
+import { useDispatch } from 'react-redux';
+import { setUser, toggleLoading } from './redux/allFeatures/Auth/authSlice';
 
 function App() {
+  const dispatch= useDispatch()
+  useEffect(()=>{
+    onAuthStateChanged(auth, (user)=>{
+     if(user){
+      dispatch(setUser(user.email))
+      console.log(user)
+     }
+     else{
+      dispatch(toggleLoading())
+     }
+    })
+  },[])
   return (
     <div className="App">
      <BrowserRouter>
@@ -31,8 +47,8 @@ function App() {
      <Routes>
      <Route path="/" element={<MainHome />}/>
      <Route path="/cart" element={<Cart/>}/>
-     <Route path="/home-product/:id" element={<DynamicHome/>}/>
      <Route path="/products" element={<AllProducts/>}/>
+     <Route path="/products/:id" element={<DynamicHome/>}/>
      <Route path="/login" element={<Login/>}/>
      <Route path='/dashboard' element={<PrivateRoute><UserDashboard/></PrivateRoute>}>
       <Route path='review' element={<Reviews/>}/>
@@ -45,6 +61,7 @@ function App() {
      <Route path="/mens" element={<Mens/>}/>
      <Route path="/blogs" element={<AllBlogs/>}/>
      <Route path="/blogs/:id" element={<SingleDynamicBlog/>}/>
+
      </Routes>
      <Footer/>
      <CopyRightInfo/>

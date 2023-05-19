@@ -1,20 +1,24 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import "./SecondHeader.css";
 import mobilePhoto from "../../../Assets/Icons/mobile.png";
 import Logo from "../../../Assets/Icons/logo.jpg";
 import ThirdHeader from "../Header/ThirdHeader/ThirdHeader";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../../Context/AuthProvider";
 import { toast } from "react-hot-toast";
+import { useDispatch, useSelector } from "react-redux";
+import { signOut } from "firebase/auth";
+import { logOut } from "../../../redux/allFeatures/Auth/authSlice";
+import auth from "../../../Firebase/firebase.config";
 const SecondHeader = () => {
-const {user, logOut}=useContext(AuthContext)
+  const dispatch= useDispatch()
+  const {email}= useSelector(state=>state.auth)
 const handleLogOut=()=>{
-  logOut()
+  signOut(auth)
   .then(()=>{
-    toast.success('Log Out Success!')
+    dispatch(logOut())
   })
-  .catch(err=>console.log(err))
+  toast.success("logout Success")
 }
   return (
     <>
@@ -40,9 +44,9 @@ const handleLogOut=()=>{
             </form>
           </Col>
          <Col xs={12} md={4} lg={3} className="logOutCol">
-         {user?.email &&  <div className="wellcome-div"> <span className="wellcome-span me-1">WellCome: </span> {user.email}</div>}
-          {user?.email ? (
-          <button onClick={handleLogOut}  variant="outline-info" className="logOutBtn">
+         {email &&  <div className="wellcome-div"> <span className="wellcome-span me-1">WellCome: </span> {email}</div>}
+          {email ? (
+          <button onClick={handleLogOut} variant="outline-info" className="logOutBtn">
             LogOut
           </button>
         ) : (

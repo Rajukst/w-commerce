@@ -1,43 +1,54 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
-import { AuthContext } from "../../Context/AuthProvider";
-import { useForm } from "react-hook-form";
+import { Link, useNavigate } from "react-router-dom";
+import { useForm, useWatch } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { Col, Container, Row } from "react-bootstrap";
 import { Controls, Player } from "@lottiefiles/react-lottie-player";
 import registerPhoto from "../../Assets/Icons/ref.png";
+import { useState } from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { createUser, googleLogin } from "../../redux/allFeatures/Auth/authSlice";
 const Registration = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-
-  const { createUser, updateUserProfile } = useContext(AuthContext);
+  const {register, control, handleSubmit,reset,} = useForm();
+const password= useWatch({control, name: "password"})
+const confirmPassword= useWatch({control, name: "confirmPassword"})
+const navigate= useNavigate();
+const [disabled, setDisabled]= useState(true);
+const {isLoading, email, isError, error}= useSelector(state=>state.auth)
+const dispatch= useDispatch()
+useEffect(()=>{
+  if(
+    password !== undefined &&
+      password !== "" &&
+      confirmPassword !== undefined &&
+      confirmPassword !== "" &&
+      password === confirmPassword
+  )
+  {
+    setDisabled(false)
+  }else{
+    setDisabled(true)
+  }
+},[password, confirmPassword])
+// error message showing UI
+useEffect(()=>{
+  if(isError){
+    toast.error(error)
+  }
+  },[isError, error])
   const registerSubmit = (e) => {
-    createUser(e.email, e.password)
-      .then((result) => {
-        const user = result.user;
-        console.log(user);
-        toast.success("Registration Successfull!");
-        const userProfiles = {
-          displayName: e.name,
-        };
-        updateUserProfile(userProfiles)
-          .then(() => {
-            //wom3
-          })
-
-          .catch((err) => console.log(err));
-      })
-      .catch((err) => console.log(err));
+    console.log(e);
+    dispatch(createUser({email:e.email, password:e.password}))
+    reset()
   };
-
+  const handleGoogleSignUp=()=>{
+    dispatch(googleLogin())
+  }
   return (
     <div>
       <h1 className="mt-3">User Registration </h1>
       <img src={registerPhoto} alt="userPhoto" className="userPhoto" />
-
       <div className="register-div">
         <Container>
           <Row>
@@ -67,7 +78,7 @@ const Registration = () => {
                       <div className="inputTitle">
                         <input
                           className="loginInfo"
-                          {...register("email", { required: true })}
+                          {...register("name", { required: true })}
                         />
                       </div>
                       <div className="title">
@@ -90,6 +101,16 @@ const Registration = () => {
                           type="password"
                         />
                       </div>
+                      <div className="title">
+                        <h6>Confirm Password:</h6>
+                      </div>
+                      <div className="inputTitle">
+                        <input
+                          className="loginInfo"
+                          {...register("confirmPassword", { required: true })}
+                          type="password"
+                        />
+                      </div>
                     </div>
                   </div>
                   {/* errors will return when field validation fails  */}
@@ -98,6 +119,7 @@ const Registration = () => {
                       className="submitInf"
                       type="submit"
                       value="Sign UP"
+                      disabled={disabled}
                     />
                   </div>
                 </form>
@@ -109,6 +131,8 @@ const Registration = () => {
                       <Link to="/login">here</Link>
                     </p>
                   </div>
+                  <p>Or</p>
+                <button onClick={handleGoogleSignUp}>Sign Up With Google</button>
                 </div>
               </div>
             </Col>

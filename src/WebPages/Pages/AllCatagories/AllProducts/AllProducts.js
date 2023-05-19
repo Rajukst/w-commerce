@@ -2,25 +2,28 @@ import React, { useEffect, useState } from "react";
 import SetAllProducts from "./SetAllProducts";
 import { Container, Row } from "react-bootstrap";
 
+import CustomLoader from "../../../CustomLoader/CustomLoader";
+import { useDispatch, useSelector } from "react-redux";
+import { useProductsQuery } from "../../../../redux/allFeatures/products/productApi";
+
 const AllProducts = () => {
-  const [allProducts, setAllProducts] = useState([]);
-  useEffect(() => {
-    fetch("http://localhost:5000/products")
-      .then((res) => res.json())
-      .then((data) => setAllProducts(data));
-  }, []);
+  const dispatch= useDispatch()
+  const {data:products, isLoading, isError}= useProductsQuery()
+  console.log(products)
   return (
     <>
       <Container>
         <h6>—New Collection</h6>
         <h1>Trending Products</h1>
-        <Row xs={1} md={3} lg={4} className="g-4">
-          {allProducts.map((getBlogs) => (
+      
+        <Row xs={1} md={3} lg={4} className="g-4 mt-3 mb-3">
+       
+          {products?.map((product) => (
             <SetAllProducts
-              key={getBlogs._id}
-              productlist={getBlogs}
+              key={product._id}
+              product={product}
             ></SetAllProducts>
-          ))}
+          ))} 
         </Row>
       </Container>
     </>

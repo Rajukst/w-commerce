@@ -4,18 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import AuthProvider from './Context/AuthProvider';
-
-
+import { Provider } from 'react-redux';
+import store from './redux/Store/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    
-    <AuthProvider>
+<Provider store={store}>
     <App />
-    </AuthProvider>
-
+    </Provider>
   </React.StrictMode>
 );
 

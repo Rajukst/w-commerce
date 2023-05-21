@@ -26,6 +26,8 @@ import { onAuthStateChanged } from 'firebase/auth';
 import auth from './Firebase/firebase.config';
 import { useDispatch } from 'react-redux';
 import { setUser, toggleLoading } from './redux/allFeatures/Auth/authSlice';
+import CheckOut from './WebPages/Checkout/CheckOut';
+import CheckoutCreate from './WebPages/Checkout/CheckoutCreate';
 
 function App() {
   const dispatch= useDispatch()
@@ -61,7 +63,7 @@ function App() {
      <Route path="/mens" element={<Mens/>}/>
      <Route path="/blogs" element={<AllBlogs/>}/>
      <Route path="/blogs/:id" element={<SingleDynamicBlog/>}/>
-
+    <Route path='/checkout' element={<PrivateRoute><CheckoutCreate/></PrivateRoute>}/>
      </Routes>
      <Footer/>
      <CopyRightInfo/>

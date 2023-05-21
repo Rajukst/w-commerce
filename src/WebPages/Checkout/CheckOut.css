@@ -1,0 +1,24 @@
+.fistCols{
+    display: flex;
+}
+.imageCol img{
+    width: 100px !important;
+    height: 100px!important;
+}
+.nameInformation{
+    text-align: left !important;
+    padding-left: 5px;
+}
+.orders{
+    text-align: left !important;
+}
+.ItemsTotals{
+    text-align: right !important;
+}
+.inputTitles select{
+    width: 70%;
+    height: 45px!important;
+}
+.cartTotal{
+    text-align: right !important;
+}

@@ -19,7 +19,12 @@ const authApi= apiSlice.injectEndpoints({
                 }
             }
         }),
+        cityApi: builder.query({
+            query:()=>({
+                url:"/cityApi",
+            }),
+        }),
 
     })
 })
-export const {useRegisterMutation }= authApi;
+export const {useRegisterMutation, useCityApiQuery }= authApi;

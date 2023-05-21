@@ -42,7 +42,7 @@ const MyOrders = () => {
     return (
         <div className="addProduct-image">
         <div className="mainInfo">
-          <h6 className="gnrlInfo">All Products List:</h6>
+          <h6 className="gnrlInfo">Order List:</h6>
           <div>
             <TableContainer component={Paper}>
               <Table sx={{ minWidth: 700 }} aria-label="customized table">

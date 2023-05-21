@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import "./DynamicHome.css";
@@ -41,18 +41,18 @@ const handleAddToCart=(product)=>{
                 </div>
                 <div className="prices">
                   <h3>${product?.salePrice}</h3>
-                  {/* <h5 className="mt-2 ps-4 pricesTwo">${regularPrice}</h5> */}
+                  <h5 className="mt-2 ps-4 pricesTwo">${product?.regularPrice}</h5>
                 </div>
                 <div className="availablity">
-                  {/* <h6>Availablity: {stock}</h6> */}
-                  {/* <h6>Catagories:{selSize}</h6> */}
+                  <h6>Availablity: {product?.stock}</h6>
+                  <h6>Catagories:{product?.selSize}</h6>
                 </div>
                 <div className="shortDes">
-                  {/* <p>Short Info: {shortDes}</p> */}
+                  <p>Short Info: {product?.shortDes}</p>
                 </div>
                 {/* Below Line is very Important.. so keep it safe */}
                 <div className="productDes">
-                  {/* <p dangerouslySetInnerHTML={{ __html: editor }}></p> */}
+                  <p dangerouslySetInnerHTML={{ __html: product?.editor }}></p>
                 </div>
                 <div className="cartAndOther">
                   <div className="cartFunctions">
@@ -69,15 +69,15 @@ const handleAddToCart=(product)=>{
                     </div>
                   </div>
                 </div>
-                <div className="cartAndOtherBtn">
-                  <div className="addToCartButn">
-                    <button onClick={()=>handleAddToCart(product)} className="mt-5 productBTN">
+                <div className="cartAndOtherBtnss">
+                  <div className="addToCartButnss">
+                    <button onClick={()=>handleAddToCart(product)} className="mt-5 productBTNsw">
                       <i className="fa-solid fa-cart-shopping pe-2"></i>Add To
                       Cart
                     </button>
                   </div>
-                  <div className="addToWishButn">
-                    <button className="mt-5 productBTN">
+                  <div className="addToWishButnses">
+                    <button className="mt-5 productBTNsw">
                       <i className="fa-regular fa-heart pe-2"></i>Add To
                       WishList
                     </button>

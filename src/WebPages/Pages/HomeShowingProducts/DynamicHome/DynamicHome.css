@@ -42,3 +42,26 @@
 .iconics {
   text-align: left;
 }
+.cartAndOtherBtnss{
+    display: flex;
+
+}
+.addToCartButnss{
+    margin-right: 30px;
+}
+.productBTNsw{
+    background: none;
+    border: none;
+    background-color: orangered;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.5s ease-out;
+}
+.productBTNsw:hover, .productBTNsw:focus{
+    background-color: #e952c5;
+    color: white;
+}

@@ -28,3 +28,16 @@ transition: all 0.5s ease-out;
 .titleLink h6:hover, .titleLink h6:focus{
 color: orangered;
 }
+.cartAndOtherBtns{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+.addToCartButn button{
+    border: none;
+    background: none;
+    transition: all 0.5s ease-out;
+}
+.addToCartButn button:hover, .addToCartButn button:focus{
+    color: orangered;
+}

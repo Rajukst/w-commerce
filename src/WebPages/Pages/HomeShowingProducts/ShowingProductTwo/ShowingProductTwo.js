@@ -38,14 +38,14 @@ const ShowingProductTwo = ({ product}) => {
             <i className="fa-regular fa-star"></i>
             <i className="fa-regular fa-star"></i>
           </div>
-          <div className="cartAndOtherBtn">
+          <div className="cartAndOtherBtns">
             <div className="addToCartButn">
-              <button  className="mt-5 productBTN">
+              <button className=" productsss">
                 <i className="fa-solid fa-cart-shopping pe-2"></i>
               </button>
             </div>
-            <div className="addToWishButn">
-              <button  className="mt-5 productBTN">
+            <div className="addToCartButn">
+              <button className=" productsss">
                 <i className="fa-regular fa-heart pe-2"></i>
               </button>
             </div>

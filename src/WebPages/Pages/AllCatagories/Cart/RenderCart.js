@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { decrementQty, incrementQty, removeItem } from '../../../../redux/allFeatures/Cart/cartSlice';
+import { toast } from 'react-hot-toast';
 
 
 const RenderCart = ({cart}) => {
@@ -8,13 +9,17 @@ const RenderCart = ({cart}) => {
     console.log(cart);
 const removeItemHandler = (cart) =>{
 dispatch(removeItem(cart))
+toast.success("Cart removed successfully");
 }
 
 const handleIncrementQty = (cart) => {
     dispatch(incrementQty(cart))
+    toast.success("Cart updated");
+
 }
 const handleDecrementQty = (cart) => {
     dispatch(decrementQty(cart))
+    toast.success("Cart updated");
 }
     return (
         <div className='gridsComponents'>
@@ -27,7 +32,7 @@ const handleDecrementQty = (cart) => {
                         <p>title</p>
                         <p>sku</p>
                         <p>available</p>
-                        <button onClick={()=>removeItemHandler(cart)}>Remove</button>
+                        <button className='removeCrtBtn' onClick={()=>removeItemHandler(cart)}>Remove</button>
                     </div>
                
                 </div>

@@ -4,9 +4,7 @@ import CheckOut from "./CheckOut";
 import { useEffect } from "react";
 import { calculateTotalAmount, clearAllCart } from "../../redux/allFeatures/Cart/cartSlice";
 import { Col, Container, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import { useCityApiQuery } from "../../redux/allFeatures/Auth/authApi";
-import { useForm } from "react-hook-form";
 import { useRef } from "react";
 import Swal from "sweetalert2";
 

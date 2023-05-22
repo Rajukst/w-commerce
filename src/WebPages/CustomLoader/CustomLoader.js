@@ -1,24 +1,12 @@
 import React from 'react';
 import "./CustomLoader.css"
 import { Container } from 'react-bootstrap';
+import anime from 'animejs/lib/anime.es.js';
+
 const CustomLoader = () => {
   return (
     <>
-        <Container fluid>
-        <div className="center">
-  <div className="wave"></div>
-  <div className="wave"></div>
-  <div className="wave"></div>
-  <div className="wave"></div>
-  <div className="wave"></div>
-  <div className="wave"></div>
-  <div className="wave"></div>
-  <div className="wave"></div>
-  <div className="wave"></div>
-  <div className="wave"></div>
-  
-</div>
-        </Container>
+
 
 </>
     );

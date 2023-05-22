@@ -39,3 +39,18 @@
 .logOutCol{
   display: flex;
 }
+.logOuts{
+  border: none !important;
+  background-color: orangered;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+  font-weight: 600;
+  color: white !important;
+  transition: all 0.5s ease-out;
+}
+.logOuts:hover, .logOutCol:focus{
+  background-color: black;
+}

@@ -3,12 +3,14 @@ import { Col } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { addToCart } from '../../../../redux/allFeatures/Cart/cartSlice';
+import { toast } from 'react-hot-toast';
 
 const SetAllProducts = ({product}) => {
     const {title, regularPrice, _id, salePrice,image}= product|| {};
     const dispatch= useDispatch()
     const handleAddToCart = (product) => {
       dispatch(addToCart({product, qty: 1}))
+      toast.success("Cart added successfully")
     }
     return (
         <>

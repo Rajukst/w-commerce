@@ -57,3 +57,39 @@
 .delevaryInfo{
     text-align: left;
 }
+.applyBTN{
+    border: none;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    background-color: aqua;
+    font-weight: 600;
+}
+.postCMNTs{
+    text-align: left;
+}
+.removeCrtBtn{
+    border: none !important;
+    background-color: red;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+.clrCart{
+    text-align: left;
+}
+.clearCart{
+    border: none !important;
+    background-color: orangered;
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    font-weight: 600;
+}

@@ -24,10 +24,10 @@ const handleLogOut=()=>{
     <>
       <Container fluid className="mt-3">
         <Row>
-          <Col xs={12} md={4} lg={3}>
+          <Col xs={12} md={4} lg={4}>
             <img src={Logo} alt="" height="70px" width="150px" />
           </Col>
-          <Col xs={12} md={4} lg={3}>
+          <Col xs={12} md={4} lg={4}>
             <div className="mobileSection">
               <div className="iconsItem">
                 <img src={mobilePhoto} alt="" height="60px" width="35px" />
@@ -38,17 +38,14 @@ const handleLogOut=()=>{
               </div>
             </div>
           </Col>
-          <Col xs={12} md={4} lg={3}>
-            <form>
-              <input name="search" placeholder="Search.." />
-            </form>
-          </Col>
-         <Col xs={12} md={4} lg={3} className="logOutCol">
+         <Col xs={12} md={4} lg={4} className="logOutCol">
          {email &&  <div className="wellcome-div"> <span className="wellcome-span me-1">WellCome: </span> {email}</div>}
           {email ? (
-          <button onClick={handleLogOut} variant="outline-info" className="logOutBtn">
+        <div>
+            <button onClick={handleLogOut} variant="outline-info" className="ms-2 logOuts">
             LogOut
           </button>
+        </div>
         ) : (
           <Link to="/login">
             <Button variant="outline-info" className="me-5">

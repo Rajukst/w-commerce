@@ -8,6 +8,7 @@ import {
   clearAllCart,
 } from "../../../../redux/allFeatures/Cart/cartSlice";
 import { Link } from "react-router-dom";
+import { toast } from "react-hot-toast";
 const Cart = () => {
   const dispatch = useDispatch();
   const { cartItems } = useSelector((state) => state?.carts);
@@ -21,6 +22,7 @@ const Cart = () => {
   // empty cart
   const clearCartHandler = () => {
     dispatch(clearAllCart());
+    toast.success("Cart Cleared");
   };
   return (
     <>
@@ -34,7 +36,6 @@ const Cart = () => {
                 </div>
                 <div className="rightHeading">
                   <h6>
-                    {" "}
                     <span className="me-1">{cartItems.length}</span> Items In
                     Cart
                   </h6>
@@ -43,7 +44,9 @@ const Cart = () => {
               {cartItems?.map((cart) => (
                 <RenderCart key={cart._id} cart={cart}></RenderCart>
               ))}
-              <button onClick={clearCartHandler}>Clear Cart</button>
+             <div className="clrCart">
+             <button className="clearCart" onClick={clearCartHandler}>Clear Cart</button>
+             </div>
             </div>
           </Col>
           <Col xs={12} md={6} lg={4}>
@@ -75,7 +78,7 @@ const Cart = () => {
                           />
                         </div>
                         <div className="applyCodeBTN">
-                          <button className="mb-5 shopBTNS">Apply code</button>
+                          <button className="mb-5 applyBTN ">Apply code</button>
                         </div>
                       </div>
                       <div className="subTotals">
@@ -101,10 +104,12 @@ const Cart = () => {
                     </div>
                   </div>
                 </div>
-                <div className="postCMNT">
-                  <button type="submit" className="mb-5 shopBTN">
-                    <Link to="/checkout">Checkout</Link>
+                <div className="postCMNTs">
+                <Link to="/checkout">  <button type="submit" className="mb-5 shopBTN">
+                    CheckOut
                   </button>
+                  </Link>
+                
                 </div>
               </div>
             </div>

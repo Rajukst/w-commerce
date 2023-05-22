@@ -4,15 +4,14 @@ import { Link } from "react-router-dom";
 import "./ShowingProductTwo.css";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../../../redux/allFeatures/Cart/cartSlice";
+import { toast } from "react-hot-toast";
 const ShowingProductTwo = ({ product}) => {
   const dispatch= useDispatch()
   const { title, slug, shortDes, regularPrice, _id, salePrice,image } = product || {};
-  // const addToCartHandler = (product) => {
-  //     dispatch(addToCart({productlist, qty: Number(1)}))
-  //   };
-  //   const addWishListHandler = () => {
-  //         console.log("productlist");
-  //       };
+  const handleAddToCart = (product) => {
+    dispatch(addToCart({product, qty: 1}))
+    toast.success("Cart added successfully")
+  }
   return (
     <>
       <Col>
@@ -40,7 +39,7 @@ const ShowingProductTwo = ({ product}) => {
           </div>
           <div className="cartAndOtherBtns">
             <div className="addToCartButn">
-              <button className=" productsss">
+              <button onClick={()=>handleAddToCart(product)} className=" productsss">
                 <i className="fa-solid fa-cart-shopping pe-2"></i>
               </button>
             </div>

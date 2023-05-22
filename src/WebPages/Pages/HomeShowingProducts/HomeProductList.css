@@ -12,3 +12,8 @@
     background-color: #FE4C1C;
     color: black;
 }
+.loadingAnimations{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

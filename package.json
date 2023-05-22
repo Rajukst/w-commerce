@@ -13,6 +13,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "animejs": "^3.2.1",
     "axios": "^1.4.0",
     "bootstrap": "^5.2.3",
     "firebase": "^9.21.0",
@@ -35,6 +36,7 @@
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.10",
     "sweetalert2": "^11.7.3",
+    "tawkto-react": "^3.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

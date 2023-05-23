@@ -54,7 +54,7 @@ const CheckoutCreate = () => {
       cartItems,
     };
 
-    fetch("https://w-commerce-server.vercel.appadd-order", {
+    fetch("https://w-commerce-server.vercel.app/add-order", {
       method: "POST",
       headers: {
         "content-type": "application/json",

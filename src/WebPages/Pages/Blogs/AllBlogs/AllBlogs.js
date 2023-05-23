@@ -5,7 +5,7 @@ import SetAllBlogs from "./SetAllBlogs";
 const AllBlogs=()=>{
     const [allBlogs, setAllBlogs]= useState([])
     useEffect(()=>{
-        fetch("https://w-commerce-server.vercel.appblogs")
+        fetch("https://w-commerce-server.vercel.app/blogs")
         .then(res=>res.json())
         .then(data=>setAllBlogs(data))
     },[])

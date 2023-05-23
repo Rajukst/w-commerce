@@ -7,7 +7,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 const TopSeller = () => {
     const [states, setStates]= useState([])
     useEffect(()=>{
-        fetch("https://w-commerce-server.vercel.appproducts")
+        fetch("https://w-commerce-server.vercel.app/products")
         .then(res=>res.json())
         .then(data=>console.log(data))
     },[])

@@ -13,14 +13,14 @@ const SingleDynamicBlog = () => {
   const [myBlogs, setMyBlogs] = useState({});
   const [comment, setComment]= useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/blogs/${id}`)
+    fetch(`https://w-commerce-server.vercel.appblogs/${id}`)
       .then((res) => res.json())
       .then((data) => setMyBlogs(data));
   }, []);
 
   //displaying all comments
   useEffect(()=>{
-    fetch("http://localhost:5000/comments")
+    fetch("https://w-commerce-server.vercel.appcomments")
     .then(res=>res.json())
     .then(data=>setComment(data))
   },[])
@@ -32,7 +32,7 @@ const handleCommentSubmit=e=>{
     const comment = addComment.current.value;
     const totalComment={name, email, comment}
     console.log(totalComment);
-    fetch("http://localhost:5000/add-comment", {
+    fetch("https://w-commerce-server.vercel.appadd-comment", {
       method: "POST",
       headers: {
         "content-type": "application/json",

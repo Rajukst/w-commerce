@@ -16,7 +16,6 @@ const MainHome = () => {
             <HomeBlogs></HomeBlogs>
               <DateTimer></DateTimer>
             <Information></Information>
-            {/* <TopSeller></TopSeller> */}
           
         </div>
     );

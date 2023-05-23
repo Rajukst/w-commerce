@@ -28,6 +28,7 @@ import { useDispatch } from 'react-redux';
 import { setUser, toggleLoading } from './redux/allFeatures/Auth/authSlice';
 import CheckoutCreate from './WebPages/Checkout/CheckoutCreate';
 import { useRef } from 'react';
+import WishList from './WebPages/Pages/AllCatagories/WishList/WishList';
 
 function App() {
   const tawkMessengerRef = useRef();
@@ -67,6 +68,7 @@ const handlerMinimise=()=>{
      <Route path="/mens" element={<Mens/>}/>
      <Route path="/blogs" element={<AllBlogs/>}/>
      <Route path="/blogs/:id" element={<SingleDynamicBlog/>}/>
+     <Route path="/wishlist" element={<WishList/>}/>
     <Route path='/checkout' element={<PrivateRoute><CheckoutCreate/></PrivateRoute>}/>
      </Routes>
      <Footer/>

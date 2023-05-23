@@ -22,6 +22,7 @@ const ShowingProductTwo = ({ product}) => {
           <Link className="titleLink" to={`/products/${_id}`}>
             <h6>{title}</h6>
           </Link>
+          <div className="hoversBody">
           <div className="TextBody">
             <div className="priceOne">
             <p>${salePrice}</p> 
@@ -48,6 +49,7 @@ const ShowingProductTwo = ({ product}) => {
                 <i className="fa-regular fa-heart pe-2"></i>
               </button>
             </div>
+          </div>
           </div>
         </div>
       </Col>

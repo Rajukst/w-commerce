@@ -2,20 +2,23 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import CheckOut from "./CheckOut";
 import { useEffect } from "react";
-import { calculateTotalAmount, clearAllCart } from "../../redux/allFeatures/Cart/cartSlice";
+import {
+  calculateTotalAmount,
+  clearAllCart,
+} from "../../redux/allFeatures/Cart/cartSlice";
 import { Col, Container, Row } from "react-bootstrap";
 import { useCityApiQuery } from "../../redux/allFeatures/Auth/authApi";
 import { useRef } from "react";
 import Swal from "sweetalert2";
 
 const CheckoutCreate = () => {
-  const addName= useRef()
-  const addEmail= useRef()
-  const addPhone= useRef()
-  const addAddress= useRef()
-  const addCity= useRef()
-  const addState= useRef()
-  const addZip= useRef()
+  const addName = useRef();
+  const addEmail = useRef();
+  const addPhone = useRef();
+  const addAddress = useRef();
+  const addCity = useRef();
+  const addState = useRef();
+  const addZip = useRef();
   const dispatch = useDispatch();
   const { email } = useSelector((state) => state.auth);
   const { cartItems } = useSelector((state) => state?.carts);
@@ -28,46 +31,52 @@ const CheckoutCreate = () => {
   useEffect(() => {
     dispatch(calculateTotalAmount());
   }, [cartItems]);
-console.log(cartItems);
+  console.log(cartItems);
 
+  const submitOrder = (e) => {
+    e.preventDefault();
+    const name = addName.current.value;
+    const emails = addEmail.current.value;
+    const phone = addPhone.current.value;
+    const address = addAddress.current.value;
+    const city = addCity.current.value;
+    const state = addState.current.value;
+    const zip = addZip.current.value;
 
+    const allData = {
+      name,
+      emails,
+      phone,
+      address,
+      city,
+      state,
+      zip,
+      cartItems,
+    };
 
-const submitOrder=(e)=>{
-  e.preventDefault();
-  const name= addName.current.value;
-  const emails= addEmail.current.value;
-const phone= addPhone.current.value;
-  const address= addAddress.current.value;
-  const city= addCity.current.value;
-  const state= addState.current.value;
-  const zip= addZip.current.value;
-
-  const allData= {name, emails, phone, address, city, state, zip, cartItems}
-
-  fetch("http://localhost:5000/add-order", {
-    method: "POST",
-    headers: {
-      "content-type": "application/json",
-    },
-    body: JSON.stringify(allData),
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      if (data.insertedId) {
-        Swal.fire({
-          position: "center",
-          icon: "success",
-          title: "Product Added Successfully !!",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-        e.target.reset();
-      }
-    });
-  console.log(e)
-dispatch(clearAllCart())  ;
-
-}
+    fetch("https://w-commerce-server.vercel.appadd-order", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(allData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Order Created Successfully !!",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          e.target.reset();
+        }
+      });
+    console.log(e);
+    dispatch(clearAllCart());
+  };
   return (
     <Container className="mt-5">
       <Row>
@@ -87,9 +96,9 @@ dispatch(clearAllCart())  ;
         {cartItems?.map((cart) => (
           <CheckOut key={cart._id} cart={cart}></CheckOut>
         ))}
-              <div className="cartTotal">
-        <h6>Total Cost Amount: {cartTotalAmount}</h6>
-      </div>
+        <div className="cartTotal">
+          <h6>Total Cost Amount: {cartTotalAmount}</h6>
+        </div>
       </Row>
 
       <Row>
@@ -151,16 +160,16 @@ dispatch(clearAllCart())  ;
                           name=""
                           id=""
                           required
-                         ref={addAddress}
+                          ref={addAddress}
                         />
                       </div>
                       <div className="titles">
                         <h6>Select District:</h6>
                       </div>
                       <div className="inputTitles">
-                        <select ref={addCity}  name="stock" id="cars">
+                        <select ref={addCity} name="stock" id="cars">
                           {data?.map((getCountry) => (
-                            <option  value={getCountry?.bn_name}>
+                            <option value={getCountry?.bn_name}>
                               {getCountry?.bn_name}
                             </option>
                           ))}
@@ -177,7 +186,7 @@ dispatch(clearAllCart())  ;
                           name=""
                           id=""
                           required
-                         ref={addState}
+                          ref={addState}
                         />
                       </div>
                       <div className="title">

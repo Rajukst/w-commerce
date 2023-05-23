@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const HomeBlogs = () => {
   const [allBlogs, setAllBlogs] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/blogs")
+    fetch("https://w-commerce-server.vercel.appblogs")
       .then((res) => res.json())
       .then((data) => setAllBlogs(data));
   }, []);

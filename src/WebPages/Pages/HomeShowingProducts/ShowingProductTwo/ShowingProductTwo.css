@@ -32,7 +32,9 @@ color: orangered;
     display: flex;
     justify-content: space-between;
     padding: 5px;
+    transition: all 0.5s ease-out;
 }
+
 .addToCartButn button{
     border: none;
     background: none;
@@ -41,3 +43,4 @@ color: orangered;
 .addToCartButn button:hover, .addToCartButn button:focus{
     color: orangered;
 }
+

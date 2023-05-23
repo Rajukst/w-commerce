@@ -48,9 +48,9 @@ const handleLogOut=()=>{
         </div>
         ) : (
           <Link to="/login">
-            <Button variant="outline-info" className="me-5">
-              Login
-            </Button>
+            <button variant="outline-info" className="ms-2 logOuts">
+            Login
+          </button>
           </Link>
         )}
          </Col>

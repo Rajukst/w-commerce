@@ -6,7 +6,7 @@ const initialState = {
   };
 
 const wishlistSlice= createSlice({
-    name: "wishlists",
+  name: "wishlists",
   initialState,
   reducers:{
 
@@ -14,7 +14,7 @@ const wishlistSlice= createSlice({
  addToWishlist: (state, action) => {
 //    console.log("consoling",action.payload)
 let existingWishlistItemIndex = state.wishlistItems?.findIndex(item=> item._id===action.payload?._id)
-if (existingWishlistItemIndex){
+if (existingWishlistItemIndex>=0){
     toast.error("The item has already been added to the wishlist")
 }
 else{
@@ -23,17 +23,15 @@ else{
     localStorage.setItem('wishlistItems', JSON.stringify(state.wishlistItems));  
     toast.success("The item has been added to the wishlist")
 }
-
-let firstWishlist= {...action.payload}
-    state.wishlistItems?.push(firstWishlist);
-    localStorage.setItem('wishlistItems', JSON.stringify(state.wishlistItems));
   },
 
   clearAllWishlists: (state, action) => {
     state.wishlistItems = [];
   },
   removeWishListItem: (state, action) => {
-
+    let filteredItems = state.wishlistItems?.filter(item => item._id !== action.payload?._id)
+    state.wishlistItems = filteredItems;
+    localStorage.setItem('wishlistItems', JSON.stringify(state.wishlistItems));
   },
 
 }

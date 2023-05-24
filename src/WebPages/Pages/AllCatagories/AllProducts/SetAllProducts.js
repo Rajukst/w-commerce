@@ -1,17 +1,24 @@
 import React from 'react';
 import { Col } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { addToCart } from '../../../../redux/allFeatures/Cart/cartSlice';
 import { toast } from 'react-hot-toast';
+import { addToWishlist } from '../../../../redux/allFeatures/wishlist/wishlistSlice';
 
 const SetAllProducts = ({product}) => {
     const {title, regularPrice, _id, salePrice,image}= product|| {};
     const dispatch= useDispatch()
+    const navigate = useNavigate();
     const handleAddToCart = (product) => {
       dispatch(addToCart({product, qty: 1}))
       toast.success("Cart added successfully")
     }
+      // here is where the product is added to the wishlist
+  const handleWishList=(product)=>{
+    dispatch(addToWishlist(product))
+    navigate("/wishlist")
+  }
     return (
         <>
         <Col>
@@ -42,7 +49,7 @@ const SetAllProducts = ({product}) => {
               </button>
             </div>
             <div className="addToCartButn">
-              <button className=" productsss">
+              <button onClick={()=>handleWishList(product)} className=" productsss">
                 <i className="fa-regular fa-heart pe-2"></i>
               </button>
             </div>

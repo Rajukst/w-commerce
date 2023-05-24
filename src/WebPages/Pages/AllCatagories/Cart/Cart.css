@@ -12,6 +12,7 @@
 }
 .informations{
     display: flex;
+
 }
 .Pdetails{
     text-align: left;
@@ -92,4 +93,22 @@
     padding-right: 20px;
     border-radius: 5px;
     font-weight: 600;
+}
+.clrWishList{
+    text-align: left !important;
+}
+.clrWishList button{
+    text-align: left !important;
+    border: none;
+    margin: 20px 30px;
+    padding: 15px 15px;
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.5s ease-out;
+}
+.clrWishList button:hover, .clrWishList button:focus{
+    background-color: #FE4C1C;
+    color: black;
 }

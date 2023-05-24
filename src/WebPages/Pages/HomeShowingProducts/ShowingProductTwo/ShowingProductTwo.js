@@ -1,6 +1,6 @@
 import React from "react";
 import { Col } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./ShowingProductTwo.css";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../../../redux/allFeatures/Cart/cartSlice";
@@ -8,13 +8,19 @@ import { toast } from "react-hot-toast";
 import { addToWishlist } from "../../../../redux/allFeatures/wishlist/wishlistSlice";
 const ShowingProductTwo = ({ product}) => {
   const dispatch= useDispatch()
+  const navigate = useNavigate();
   const { title, slug, shortDes, regularPrice, _id, salePrice,image } = product || {};
+
+  // here is where the product is added to the cart
   const handleAddToCart = (product) => {
     dispatch(addToCart({product, qty: 1}))
     toast.success("Cart added successfully")
   }
+  
+  // here is where the product is added to the wishlist
   const handleWishList=(product)=>{
     dispatch(addToWishlist(product))
+    navigate("/wishlist")
   }
   return (
     <>

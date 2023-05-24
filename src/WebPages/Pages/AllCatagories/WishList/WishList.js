@@ -1,16 +1,25 @@
 import React from 'react';
 import { Container, Row } from 'react-bootstrap';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import SetWishList from './SetWishList';
+import { clearAllWishlists } from '../../../../redux/allFeatures/wishlist/wishlistSlice';
+import { toast } from 'react-hot-toast';
 
 const WishList = () => {
     const {wishlistItems}= useSelector((state)=>state.wishlist)
+    const dispatch = useDispatch();
+    //
+    const clearWishListHandler = () => {
+      dispatch(clearAllWishlists());
+      toast.success("WishList Cleared");
+    };
     return (
         <div>
-            <Container className=" ">
-        <h5>— New Collection</h5>
-        <h1>Trending Products</h1>
-
+            <Container className="mt-5 mb-5 ">
+        <h5>— WishList page</h5>
+       {
+        wishlistItems?.length==0 && <h1>Your WishList is Empty</h1>
+       }
         <Row xs={1} s={2} md={2} lg={4} className="g-4">
           {wishlistItems?.map((wishlist) => (
             <SetWishList
@@ -20,8 +29,9 @@ const WishList = () => {
           ))}
         </Row>
       </Container>
-        <button className="mt-5 productBTN">View All Product</button>
-
+      <div className="clrWishList">
+          <button onClick={clearWishListHandler}>Clear Wishlist</button>
+        </div>
         </div>
     );
 };

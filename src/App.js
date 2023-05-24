@@ -27,14 +27,10 @@ import auth from './Firebase/firebase.config';
 import { useDispatch } from 'react-redux';
 import { setUser, toggleLoading } from './redux/allFeatures/Auth/authSlice';
 import CheckoutCreate from './WebPages/Checkout/CheckoutCreate';
-import { useRef } from 'react';
 import WishList from './WebPages/Pages/AllCatagories/WishList/WishList';
 
 function App() {
-  const tawkMessengerRef = useRef();
-const handlerMinimise=()=>{
-  tawkMessengerRef.current.minimize();
-}
+
   const dispatch= useDispatch()
   useEffect(()=>{
     onAuthStateChanged(auth, (user)=>{

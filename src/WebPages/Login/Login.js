@@ -94,7 +94,7 @@ if(isError){
                   <Link to="/register">here</Link>
                 </p>
                 <p>Or</p>
-                <button onClick={handleGoogleLogin}>Sign In With Google</button>
+                <button className="mb-5 shopBTN" onClick={handleGoogleLogin}>Sign In With Google</button>
               </div>
             </div>
           </Col>

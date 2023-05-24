@@ -20,7 +20,7 @@ return data.user.email;
 })
 export const googleLogin=createAsyncThunk("auth/googleLogin", async()=>{
 const googleProvider= new GoogleAuthProvider()
-const data= signInWithPopup(auth, googleProvider)
+const data= await signInWithPopup(auth, googleProvider)
 return data.user.email;
 })
 

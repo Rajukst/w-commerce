@@ -1,3 +1,4 @@
+import { setUser } from "../Auth/authSlice";
 import apiSlice from "../apiSlice/apiSlice";
 
 
@@ -13,8 +14,7 @@ const productApi= apiSlice.injectEndpoints({
                 url:`/products/${id}`,
             }),
         }),
-
     })
 })
 
-export const {useProductsQuery, useProductsByIdQuery}= productApi;
+export const {useProductsQuery, useProductsByIdQuery, }= productApi;

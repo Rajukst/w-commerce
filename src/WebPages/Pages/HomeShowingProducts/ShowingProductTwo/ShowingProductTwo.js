@@ -5,12 +5,16 @@ import "./ShowingProductTwo.css";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../../../redux/allFeatures/Cart/cartSlice";
 import { toast } from "react-hot-toast";
+import { addToWishlist } from "../../../../redux/allFeatures/wishlist/wishlistSlice";
 const ShowingProductTwo = ({ product}) => {
   const dispatch= useDispatch()
   const { title, slug, shortDes, regularPrice, _id, salePrice,image } = product || {};
   const handleAddToCart = (product) => {
     dispatch(addToCart({product, qty: 1}))
     toast.success("Cart added successfully")
+  }
+  const handleWishList=(product)=>{
+    dispatch(addToWishlist(product))
   }
   return (
     <>
@@ -45,7 +49,7 @@ const ShowingProductTwo = ({ product}) => {
               </button>
             </div>
             <div className="addToCartButn">
-              <button className=" productsss">
+              <button onClick={()=>handleWishList(product)} className=" productsss">
                 <i className="fa-regular fa-heart pe-2"></i>
               </button>
             </div>

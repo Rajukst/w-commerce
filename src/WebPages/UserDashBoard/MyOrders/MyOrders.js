@@ -16,7 +16,7 @@ import { useEffect } from 'react';
 const MyOrders = () => {
     const [order, setOrder]= useState([])
     useEffect(() => {
-        fetch("https://w-commerce-server.vercel.app/orders")
+        fetch("https://service-yvt2.onrender.com/orders")
           .then((res) => res.json())
           .then((data) => setOrder(data));
       }, []);

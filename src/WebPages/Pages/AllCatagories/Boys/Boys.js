@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Container, Row } from 'react-bootstrap';
-import { Controls, Player } from "@lottiefiles/react-lottie-player";
 import { useProductsQuery } from '../../../../redux/allFeatures/products/productApi';
-import SetMens from './SetMens';
+import SetBoys from './SetBoys';
+import { Controls, Player } from "@lottiefiles/react-lottie-player";
 
-const Mens = () => {
+const Boys = () => {
     const {data:products, isLoading, isError}= useProductsQuery()
-
     return (
         <Container>
         <h6>—Mens Collection</h6>
@@ -28,14 +27,14 @@ const Mens = () => {
         }
         <Row xs={1} md={3} lg={4} className="g-4 mt-3 mb-3">
             {
-                products?.filter(catagory=>catagory.finalFatagory?.includes("Mens")).map((product)=><SetMens
+                products?.filter(catagory=>catagory.finalFatagory?.includes("Boys")).map((product)=><SetBoys
                 key={product._id}
                 product={product}
-                ></SetMens>)
+                ></SetBoys>)
             }
         </Row>
       </Container>
     );
 };
 
-export default Mens;
+export default Boys;

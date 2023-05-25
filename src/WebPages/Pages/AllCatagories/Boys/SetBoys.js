@@ -1,12 +1,12 @@
 import React from 'react';
-import { Col } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { addToCart } from '../../../../redux/allFeatures/Cart/cartSlice';
 import { toast } from 'react-hot-toast';
 import { addToWishlist } from '../../../../redux/allFeatures/wishlist/wishlistSlice';
+import { Col } from 'react-bootstrap';
 
-const SetAllProducts = ({product}) => {
+const SetBoys = ({product}) => {
     const {title, regularPrice, _id, salePrice,image}= product|| {};
     const dispatch= useDispatch()
     const navigate = useNavigate();
@@ -16,11 +16,10 @@ const SetAllProducts = ({product}) => {
     }
       // here is where the product is added to the wishlist
   const handleWishList=(product)=>{
-    dispatch(addToWishlist({product, qty: 1}))
+    dispatch(addToWishlist(product))
     navigate("/wishlist")
   }
     return (
-        <>
         <Col>
         <div className="imagBody">
             <div className="headings">
@@ -56,8 +55,7 @@ const SetAllProducts = ({product}) => {
           </div>
         </div>
         </Col>
-        </>
     );
 };
 
-export default SetAllProducts;
+export default SetBoys;

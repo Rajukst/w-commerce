@@ -28,6 +28,8 @@ import { useDispatch } from 'react-redux';
 import { setUser, toggleLoading } from './redux/allFeatures/Auth/authSlice';
 import CheckoutCreate from './WebPages/Checkout/CheckoutCreate';
 import WishList from './WebPages/Pages/AllCatagories/WishList/WishList';
+import Womens from './WebPages/Pages/AllCatagories/Womens/Womens';
+import Boys from './WebPages/Pages/AllCatagories/Boys/Boys';
 
 function App() {
 
@@ -62,6 +64,8 @@ function App() {
      </Route>
      <Route path="/register" element={<Registration/>}/>
      <Route path="/mens" element={<Mens/>}/>
+     <Route path="/womens" element={<Womens/>}/>
+     <Route path="/boys" element={<Boys/>}/>
      <Route path="/blogs" element={<AllBlogs/>}/>
      <Route path="/blogs/:id" element={<SingleDynamicBlog/>}/>
      <Route path="/wishlist" element={<WishList/>}/>

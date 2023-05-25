@@ -13,11 +13,11 @@ const HomeCarosul = () => {
       <div className="allCatagoriesss">
                 <div className="listItemsss">
                  <h5 className="allCatagoris">Catagories</h5>
-                 <Link className="myLink"><h6>Men</h6></Link>
+                 <Link to="/mens" className="myLink"><h6>Men</h6></Link>
                 <Link className="myLink"> <h6>Women</h6></Link>
-                 <Link className="myLink"><h6>Kids</h6></Link>
+                 <Link to="boys" className="myLink"><h6>Boys</h6></Link>
+                 <Link className="myLink"><h6>Girls</h6></Link>
                  <Link className="myLink"><h6>Accessories</h6></Link>
-                 <Link className="myLink"><h6>Clothing</h6></Link>
                  <Link className="myLink"><h6>Bags</h6></Link>
                 <Link className="myLink"> <h6>Footwear</h6></Link>
                  <Link className="myLink"><h6>Watches</h6></Link>

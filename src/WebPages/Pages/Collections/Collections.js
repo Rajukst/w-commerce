@@ -3,7 +3,9 @@ import { Col, Container, Row } from 'react-bootstrap';
 import PhotoOne from "../../../Assets/Icons/03.png"
 import PhotoTwo from "../../../Assets/Icons/0134.png"
 import "./Collection.css"
+import { Link, useNavigate } from 'react-router-dom';
 const Collections = () => {
+    const navigate= useNavigate()
     return (
         <div className='mb-5 mt-5'>
             <Container>
@@ -13,7 +15,7 @@ const Collections = () => {
                             <div className="collectionText">
                                 <h5> Summer Collection</h5>
                                 <h1> Women Fashion</h1>
-                                <button className='shopNow'>Shop Now</button>
+                                <button className='shopNow'><Link className='myLinkCls' to="/womens">Shop Now</Link></button>
                             </div>
                             <div className="collectionImg">
                                 <img className='img-fluid hoverImg' src={PhotoOne} alt="" />

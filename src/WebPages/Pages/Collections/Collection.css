@@ -26,9 +26,15 @@
   background-color: black;
   color: white;
   font-weight: 500;
+
+
 }
 .shopNow:hover, .shopNow:focus{
   background-color: orangered;
   color: black;
   font-weight: 500;
+}
+.myLinkCls{
+  text-decoration: none !important;
+  color: white!important;
 }

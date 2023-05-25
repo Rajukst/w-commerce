@@ -65,3 +65,10 @@
     background-color: #e952c5;
     color: white;
 }
+.colorButtons{
+    background: none;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}

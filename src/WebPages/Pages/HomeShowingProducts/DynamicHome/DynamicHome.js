@@ -45,10 +45,13 @@ const handleAddToCart=(product)=>{
                 </div>
                 <div className="availablity">
                   <h6>Availablity: {product?.stock}</h6>
-                  <h6>Catagories:{product?.selSize}</h6>
+                  <h6>Catagories:{product?.quantity}</h6>
                 </div>
                 <div className="shortDes">
                   <p>Short Info: {product?.shortDes}</p>
+                </div>
+                <div className="shortDes">
+                <p>Colors</p>  <button className="colorButtons" style={{backgroundColor:product?.color}}></button>
                 </div>
                 {/* Below Line is very Important.. so keep it safe */}
                 <div className="productDes">

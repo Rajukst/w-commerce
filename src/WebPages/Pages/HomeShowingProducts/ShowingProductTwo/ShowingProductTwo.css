@@ -43,4 +43,13 @@ color: orangered;
 .addToCartButn button:hover, .addToCartButn button:focus{
     color: orangered;
 }
-
+.headings{
+    overflow: hidden;
+    transition: all 0.5s ease-out;
+}
+.homeImage{
+    transition: all 0.5s ease-out;
+}
+.homeImage:hover, .homeImage:focus{
+   transform: scale(1.2);
+}

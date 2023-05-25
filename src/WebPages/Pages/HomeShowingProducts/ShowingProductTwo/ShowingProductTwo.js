@@ -27,11 +27,14 @@ const ShowingProductTwo = ({ product}) => {
       <Col>
         <div className="imagBody">
           <div className="headings">
-            <img className="img-fluid homeImage" src={image} alt="dynamic-image" />
-          </div>
           <Link className="titleLink" to={`/products/${_id}`}>
-            <h6>{title}</h6>
+          <img className="img-fluid homeImage" src={image} alt="dynamic-image" />
           </Link>
+           
+          </div>
+          <div className="text">
+          <h6>{title}</h6>
+          </div>
           <div className="hoversBody">
           <div className="TextBody">
             <div className="priceOne">

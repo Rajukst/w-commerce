@@ -14,13 +14,11 @@ const HomeCarosul = () => {
                 <div className="listItemsss">
                  <h5 className="allCatagoris">Catagories</h5>
                  <Link to="/mens" className="myLink"><h6>Men</h6></Link>
-                <Link className="myLink"> <h6>Women</h6></Link>
-                 <Link to="boys" className="myLink"><h6>Boys</h6></Link>
-                 <Link className="myLink"><h6>Girls</h6></Link>
+                <Link to="/womens" className="myLink"> <h6>Women</h6></Link>
+                 <Link to="/boys" className="myLink"><h6>Boys</h6></Link>
+                 <Link to="/girls" className="myLink"><h6>Girls</h6></Link>
                  <Link className="myLink"><h6>Accessories</h6></Link>
-                 <Link className="myLink"><h6>Bags</h6></Link>
                 <Link className="myLink"> <h6>Footwear</h6></Link>
-                 <Link className="myLink"><h6>Watches</h6></Link>
                  <Link className="myLink"><h6>Jewellery</h6></Link>
                 </div>
             </div>
@@ -30,7 +28,7 @@ const HomeCarosul = () => {
                 <div className="leftText">
                     <h1>Trendy</h1>
                     <h1>FASHION</h1>
-                   <Link> <button className="shopBTN">Shop Now</button></Link>
+                   <Link to="/products"> <button className="shopBTN">Shop Now</button></Link>
                 </div>
                 <div className="rightCar">
                     <img className="img-fluid" src={carImg} alt="" />

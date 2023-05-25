@@ -1,12 +1,12 @@
 import React from 'react';
 import { Col } from 'react-bootstrap';
+import { toast } from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { addToCart } from '../../../../redux/allFeatures/Cart/cartSlice';
-import { toast } from 'react-hot-toast';
 import { addToWishlist } from '../../../../redux/allFeatures/wishlist/wishlistSlice';
 
-const SetAllProducts = ({product}) => {
+const SetGIrls = ({product}) => {
     const {title, regularPrice, _id, salePrice,image}= product|| {};
     const dispatch= useDispatch()
     const navigate = useNavigate();
@@ -20,15 +20,12 @@ const SetAllProducts = ({product}) => {
     navigate("/wishlist")
   }
     return (
-        <>
         <Col>
         <div className="imagBody">
-        <div className="headings">
-          <Link className="titleLink" to={`/products/${_id}`}>
-          <img className="img-fluid homeImage" src={image} alt="dynamic-image" />
-          </Link>
-          </div>
-            <h6>{title}</h6>
+            <div className="headings">
+                <img className='img-fluid' src={image} alt="dynamic-images" />
+            </div>
+           <Link className='titleLink' to={`/products/${_id}`}> <h6>{title}</h6></Link>
             <div className="TextBody">
                 <div className="priceOne">
                 <p>${salePrice}</p>   
@@ -58,8 +55,7 @@ const SetAllProducts = ({product}) => {
           </div>
         </div>
         </Col>
-        </>
     );
 };
 
-export default SetAllProducts;
+export default SetGIrls;

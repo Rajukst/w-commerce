@@ -30,6 +30,7 @@ import CheckoutCreate from './WebPages/Checkout/CheckoutCreate';
 import WishList from './WebPages/Pages/AllCatagories/WishList/WishList';
 import Womens from './WebPages/Pages/AllCatagories/Womens/Womens';
 import Boys from './WebPages/Pages/AllCatagories/Boys/Boys';
+import Girls from './WebPages/Pages/AllCatagories/Girls/Girls';
 
 function App() {
 
@@ -66,6 +67,7 @@ function App() {
      <Route path="/mens" element={<Mens/>}/>
      <Route path="/womens" element={<Womens/>}/>
      <Route path="/boys" element={<Boys/>}/>
+     <Route path="/girls" element={<Girls/>}/>
      <Route path="/blogs" element={<AllBlogs/>}/>
      <Route path="/blogs/:id" element={<SingleDynamicBlog/>}/>
      <Route path="/wishlist" element={<WishList/>}/>

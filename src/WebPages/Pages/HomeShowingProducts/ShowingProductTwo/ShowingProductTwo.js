@@ -9,7 +9,7 @@ import { addToWishlist } from "../../../../redux/allFeatures/wishlist/wishlistSl
 const ShowingProductTwo = ({ product}) => {
   const dispatch= useDispatch()
   const navigate = useNavigate();
-  const { title, slug, shortDes, regularPrice, _id, salePrice,image } = product || {};
+  const { title, regularPrice, _id, salePrice,image } = product || {};
 
   // here is where the product is added to the cart
   const handleAddToCart = (product) => {

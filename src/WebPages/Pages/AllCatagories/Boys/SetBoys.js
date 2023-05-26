@@ -23,9 +23,11 @@ const SetBoys = ({product}) => {
         <Col>
         <div className="imagBody">
             <div className="headings">
-                <img className='img-fluid' src={image} alt="dynamic-image" />
+            <Link className="titleLink" to={`/products/${_id}`}>
+          <img className="img-fluid homeImage" src={image} alt="dynamic-image" />
+          </Link>
             </div>
-           <Link className='titleLink' to={`/products/${_id}`}> <h6>{title}</h6></Link>
+         <h6>{title}</h6>
             <div className="TextBody">
                 <div className="priceOne">
                 <p>${salePrice}</p>   

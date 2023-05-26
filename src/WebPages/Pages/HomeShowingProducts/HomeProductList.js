@@ -9,6 +9,7 @@ import { Controls, Player } from "@lottiefiles/react-lottie-player";
 const HomeProductList = () => {
   const { data: products, isLoading, } = useProductsQuery() || {};
 
+  
   return (
     <>
       <Container className=" ">

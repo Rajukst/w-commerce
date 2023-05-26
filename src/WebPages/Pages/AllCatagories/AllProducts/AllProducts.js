@@ -10,6 +10,7 @@ const AllProducts = () => {
   const dispatch= useDispatch()
   const {data:products, isLoading, isError}= useProductsQuery()
   console.log(products)
+  
   return (
     <>
       <Container>

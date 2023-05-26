@@ -9,16 +9,16 @@ import { toast } from "react-hot-toast";
 
 const DynamicHome = () => {
   const { id } = useParams();
-  const dispatch= useDispatch()
-  const navigate= useNavigate()
-const {data: product}= useProductsByIdQuery(id) ||{};
-console.log(product)
-  const [qty, setqty]= useState(1)
-const handleAddToCart=(product)=>{
-  dispatch(addToCart({product, qty: Number(qty)}));
-  toast.success("Cart added successfully");
-  navigate("/cart")
-}
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { data: product } = useProductsByIdQuery(id) || {};
+  console.log(product);
+  const [qty, setqty] = useState(1);
+  const handleAddToCart = (product) => {
+    dispatch(addToCart({ product, qty: Number(qty) }));
+    toast.success("Cart added successfully");
+    navigate("/cart");
+  };
   return (
     <>
       <div className="main-containers">
@@ -41,17 +41,27 @@ const handleAddToCart=(product)=>{
                 </div>
                 <div className="prices">
                   <h3>${product?.salePrice}</h3>
-                  <h5 className="mt-2 ps-4 pricesTwo">${product?.regularPrice}</h5>
+                  <h5 className="mt-2 ps-4 pricesTwo">
+                    ${product?.regularPrice}
+                  </h5>
                 </div>
                 <div className="availablity">
                   <h6>Availablity: {product?.stock}</h6>
-                  <h6>Catagories:{product?.quantity}</h6>
+                  <h6>Total Stock: {product?.quantity}</h6>
                 </div>
                 <div className="shortDes">
                   <p>Short Info: {product?.shortDes}</p>
                 </div>
-                <div className="shortDes">
-                <p>Colors</p>  <button className="colorButtons" style={{backgroundColor:product?.color}}></button>
+                <div className="shortDess">
+                  <div className="colorNames">
+                    <p>Avaiable Colors:</p>
+                  </div>
+                  <div className="colorGen">
+                    <button
+                      className="colorButtons"
+                      style={{ backgroundColor: product?.color }}
+                    ></button>
+                  </div>
                 </div>
                 {/* Below Line is very Important.. so keep it safe */}
                 <div className="productDes">
@@ -59,22 +69,31 @@ const handleAddToCart=(product)=>{
                 </div>
                 <div className="cartAndOther">
                   <div className="cartFunctions">
-                    <button  className="cartButtons">-</button>
-                    <input value={qty} min={1} onChange={(e)=>setqty(e.target.value)} type="number" className="cartInput" />
-                    <button  className="cartButtons">+</button>
+                    <button className="cartButtons">-</button>
+                    <input
+                      value={qty}
+                      min={1}
+                      onChange={(e) => setqty(e.target.value)}
+                      type="number"
+                      className="cartInput"
+                    />
+                    <button className="cartButtons">+</button>
                   </div>
                   <div className="selectedItems">
                     <div class="dropdown">
                       <button>HubSpot Resources</button>
                       <div class="dropdown-content">
-                        {/* <p>{slug}</p> */}
+                        
                       </div>
                     </div>
                   </div>
                 </div>
                 <div className="cartAndOtherBtnss">
                   <div className="addToCartButnss">
-                    <button onClick={()=>handleAddToCart(product)} className="mt-5 productBTNsw">
+                    <button
+                      onClick={() => handleAddToCart(product)}
+                      className="mt-5 productBTNsw"
+                    >
                       <i className="fa-solid fa-cart-shopping pe-2"></i>Add To
                       Cart
                     </button>

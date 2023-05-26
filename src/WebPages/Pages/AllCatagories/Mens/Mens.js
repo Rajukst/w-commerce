@@ -8,7 +8,7 @@ const Mens = () => {
     const {data:products, isLoading, isError}= useProductsQuery()
 
     return (
-        <Container>
+        <Container fluid>
         <h6>—Mens Collection</h6>
         <h1>Trending Products</h1>
         {

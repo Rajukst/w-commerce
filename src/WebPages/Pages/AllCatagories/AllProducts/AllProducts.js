@@ -13,7 +13,7 @@ const AllProducts = () => {
   
   return (
     <>
-      <Container>
+      <Container fluid>
         <h6>—New Collection</h6>
         <h1>Trending Products</h1>
         {

@@ -12,7 +12,7 @@ const HomeProductList = () => {
   
   return (
     <>
-      <Container className=" ">
+      <Container fluid className=" ">
         <h5>— New Collection</h5>
         <h1>Trending Products</h1>
         {isLoading && (

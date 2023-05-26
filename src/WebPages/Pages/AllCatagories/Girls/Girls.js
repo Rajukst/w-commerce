@@ -6,8 +6,8 @@ import SetGIrls from './SetGIrls';
 const Girls = () => {
     const {data:products, isLoading, isError}= useProductsQuery()
     return (
-        <Container>
-        <h6>—Mens Collection</h6>
+        <Container fluid>
+        <h6>—Girls Collection</h6>
         <h1>Trending Products</h1>
         {
           isLoading && <div className="loadingAnimations">

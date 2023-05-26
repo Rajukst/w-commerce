@@ -7,7 +7,7 @@ import SetWomens from './SetWomens';
 const Womens = () => {
     const {data:products, isLoading, isError}= useProductsQuery()
     return (
-        <Container>
+        <Container fluid>
         <h6>—Womens Collection</h6>
         <h1>Trending Products</h1>
         {

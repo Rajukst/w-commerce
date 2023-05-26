@@ -7,8 +7,8 @@ import { Controls, Player } from "@lottiefiles/react-lottie-player";
 const Boys = () => {
     const {data:products, isLoading, isError}= useProductsQuery()
     return (
-        <Container>
-        <h6>—Mens Collection</h6>
+        <Container fluid>
+        <h6>—Boys Collection</h6>
         <h1>Trending Products</h1>
         {
           isLoading && <div className="loadingAnimations">

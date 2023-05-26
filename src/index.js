@@ -6,12 +6,16 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Provider } from 'react-redux';
 import store from './redux/Store/store';
-
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
 <Provider store={store}>
     <App />
+    <MessengerCustomerChat
+    pageId="109000364982910"
+    appId="220451756907901"
+  />
     </Provider>
   </React.StrictMode>
 );

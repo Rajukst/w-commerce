@@ -35,7 +35,7 @@ const DateTimer = ({ newYear }) => {
         <Col xs={12} md={5} lg={5}>
           <div className="allOfferss">
           <div className="offerText">
-            <h6>— Limited Offer</h6>
+            <h6 className="mt-5">— Limited Offer</h6>
             <h3>Hot Deal Today</h3>
           </div>
           <div className="countDown">

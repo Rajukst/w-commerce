@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Container, Row } from "react-bootstrap";
 import SetAllBlogs from "./SetAllBlogs";
 import { useFetchBlogsQuery } from "../../../../redux/allFeatures/products/productApi";
@@ -12,7 +12,7 @@ const AllBlogs=()=>{
             <h1>Latest News Feed</h1>
         <Row xs={1} md={3} lg={3} className="g-4">
         {
-            blogs.map(getBlogs=> <SetAllBlogs
+            blogs?.map(getBlogs=> <SetAllBlogs
             key={getBlogs._id}
             bloglists={getBlogs}
             ></SetAllBlogs> )

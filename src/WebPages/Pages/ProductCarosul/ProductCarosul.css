@@ -1,10 +1,12 @@
 .productCarosul{
     background-color: white;
     margin-top: -30px;
+    margin-bottom: 10px;
     border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .headingsssss{
-    margin: 10px;
+    margin: 5px;
 }
 .headingsssss{
     overflow: hidden;

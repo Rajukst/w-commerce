@@ -20,3 +20,7 @@
 .countImg{
     margin-top: 33px;
 }
+.myInt{
+    background: none !important;
+    border-radius: 5px !important;
+}

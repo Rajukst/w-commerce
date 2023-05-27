@@ -73,7 +73,7 @@ const DateTimer = ({ newYear }) => {
           <div className="subscribers">
             <div className="inputTitle">
               <input
-                className="productInput"
+                className="productInput myInt"
                 type=""
                 name=""
                 id=""

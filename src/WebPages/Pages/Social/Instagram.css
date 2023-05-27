@@ -1,0 +1,19 @@
+.socialIconics{
+    background-color: #042825;
+    margin-bottom: -10px;
+    color: white !important;
+}
+.myCont *{
+    margin: 0;
+    padding: 0;
+}
+.myImgs{
+    width: 150px !important;
+    height: 150px !important;
+}
+.iconsInsta{
+    margin-top: 3rem !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}

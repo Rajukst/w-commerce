@@ -6,6 +6,7 @@ import HomeProductList from '../Pages/HomeShowingProducts/HomeProductList';
 import Information from '../Pages/Shipping_Support/Information';
 import HomeBlogs from '../Pages/Blogs/HomeBlogs/HomeBlogs';
 import ProductCarosul from '../Pages/ProductCarosul/ProductCarosul';
+import Instagram from '../Pages/Social/Instagram';
 
 
 const MainHome = () => {
@@ -19,7 +20,8 @@ const MainHome = () => {
             <ProductCarosul></ProductCarosul>
               <DateTimer newYear={newYear}></DateTimer>
               <HomeBlogs></HomeBlogs>
-            
+                <Instagram></Instagram>
+                
         </div>
     );
 };

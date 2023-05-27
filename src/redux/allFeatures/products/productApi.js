@@ -14,7 +14,22 @@ const productApi= apiSlice.injectEndpoints({
                 url:`/products/${id}`,
             }),
         }),
+        fetchBlogs: builder.query({
+            query:(id)=>({
+                url:`/blogs`,
+            }),
+        }),
+        singleBlog: builder.query({
+            query:(id)=>({
+                url:`/blogs/${id}`,
+            }),
+        }),
+        comments: builder.query({
+            query:(id)=>({
+                url:`/comments`,
+            }),
+        }),
     })
 })
 
-export const {useProductsQuery, useProductsByIdQuery, }= productApi;
+export const {useProductsQuery, useProductsByIdQuery, useFetchBlogsQuery, useSingleBlogQuery, useCommentsQuery}= productApi;

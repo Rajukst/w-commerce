@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import SetAllBlogs from "./SetAllBlogs";
+import { useFetchBlogsQuery } from "../../../../redux/allFeatures/products/productApi";
 
 const AllBlogs=()=>{
-    const [allBlogs, setAllBlogs]= useState([])
-    useEffect(()=>{
-        fetch("https://service-yvt2.onrender.com/blogs")
-        .then(res=>res.json())
-        .then(data=>setAllBlogs(data))
-    },[])
+  const {data: blogs}= useFetchBlogsQuery() || {};
     return(
         <>
         <Container>
@@ -16,7 +12,7 @@ const AllBlogs=()=>{
             <h1>Latest News Feed</h1>
         <Row xs={1} md={3} lg={3} className="g-4">
         {
-            allBlogs.map(getBlogs=> <SetAllBlogs
+            blogs.map(getBlogs=> <SetAllBlogs
             key={getBlogs._id}
             bloglists={getBlogs}
             ></SetAllBlogs> )

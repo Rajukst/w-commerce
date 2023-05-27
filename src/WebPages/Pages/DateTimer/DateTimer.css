@@ -1,0 +1,22 @@
+.offerText{
+    text-align: left !important;
+}
+.countDown{
+    display: flex !important;
+}
+.times{
+    margin-right: 30px;
+    text-align: left !important;
+    display: flex !important;
+}
+.times h5{
+    padding-top: 20px;
+    color: orangered;
+    font-weight: bold;
+}
+.dateCount{
+    background-color: aliceblue;
+}
+.countImg{
+    margin-top: 33px;
+}

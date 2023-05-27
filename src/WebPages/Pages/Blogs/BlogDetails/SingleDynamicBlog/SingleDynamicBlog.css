@@ -116,3 +116,10 @@ width: 70%;
     text-align: left;
     margin-left: 16px;
 }
+.imgRound{
+    border-radius: 5px;
+}
+.titles{
+    text-align: left;
+    margin-top: 10px;
+}

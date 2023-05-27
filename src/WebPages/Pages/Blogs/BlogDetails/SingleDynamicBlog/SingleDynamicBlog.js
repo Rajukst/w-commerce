@@ -5,25 +5,16 @@ import "./SingleDynamicBlog.css";
 import { useRef } from "react";
 import Swal from "sweetalert2";
 import Comments from "./Comments";
+import { useCommentsQuery, useSingleBlogQuery } from "../../../../../redux/allFeatures/products/productApi";
 const SingleDynamicBlog = () => {
     const addName = useRef();
     const addEmail = useRef();
     const addComment = useRef();
   const { id } = useParams();
-  const [myBlogs, setMyBlogs] = useState({});
-  const [comment, setComment]= useState([]);
-  useEffect(() => {
-    fetch(`https://service-yvt2.onrender.com/blogs/${id}`)
-      .then((res) => res.json())
-      .then((data) => setMyBlogs(data));
-  }, []);
-
+  // displaying all blog entries
+  const {data: blogs}= useSingleBlogQuery(id)
   //displaying all comments
-  useEffect(()=>{
-    fetch("https://service-yvt2.onrender.com/comments")
-    .then(res=>res.json())
-    .then(data=>setComment(data))
-  },[])
+  const {data: comments}= useCommentsQuery();
   // posting comment
 const handleCommentSubmit=e=>{
     e.preventDefault()
@@ -55,15 +46,15 @@ const handleCommentSubmit=e=>{
 }
   return (
     <Container>
-      <img className="img-fluid" src={myBlogs.Image} alt="" />
+      <img className="img-fluid" src={blogs?.Image} alt="" />
       <div className="headingInfo">
-        <h1>{myBlogs.title}</h1>
-        <p>{myBlogs.shortDesOne}</p>
-        <p>{myBlogs.shortDesTwo}</p>
+        <h1>{blogs?.title}</h1>
+        <p>{blogs?.shortDesOne}</p>
+        <p>{blogs?.shortDesTwo}</p>
       </div>
       <div className="statusInfo">
-        <p className="statusName">{myBlogs.status}</p>
-        <p className="statuss">{myBlogs.statusName}</p>
+        <p className="statusName">{blogs?.status}</p>
+        <p className="statuss">"{blogs?.statusName}"</p>
       </div>
       <div className="shareInfo">
         <div className="leftSite">
@@ -77,7 +68,7 @@ const handleCommentSubmit=e=>{
       <div className="commenHeading">
         <h1>All Comments</h1>
         {
-            comment.map((getComment)=> <Comments
+            comments?.map((getComment)=> <Comments
             key={getComment._id}
             comments={getComment}
             ></Comments> )

@@ -2,19 +2,15 @@ import React, { useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import AllHomeBlogs from "./AllHomeBlogs";
 import { Link } from "react-router-dom";
+import { useFetchBlogsQuery } from "../../../../redux/allFeatures/products/productApi";
 const HomeBlogs = () => {
-  const [allBlogs, setAllBlogs] = useState([]);
-  useEffect(() => {
-    fetch("https://service-yvt2.onrender.com/blogs")
-      .then((res) => res.json())
-      .then((data) => setAllBlogs(data));
-  }, []);
+const {data: blogs}= useFetchBlogsQuery() || {};
   return (
     <Container>
       <h6>— Fashion Blog</h6>
       <h1>Latest News Feed</h1>
       <Row xs={1} md={3} lg={3} className="g-4">
-        {allBlogs.map((getAllBlogs) => (
+        {blogs?.slice(0,3).map((getAllBlogs) => (
           <AllHomeBlogs
             key={getAllBlogs._id}
             blogs={getAllBlogs}

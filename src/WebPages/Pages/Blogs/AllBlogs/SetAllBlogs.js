@@ -3,14 +3,23 @@ import { Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const SetAllBlogs = ({bloglists}) => {
-    const {_id, Image,shortDesOne,shortDesTwo,status,statusName,title}= bloglists
+    const {_id, Image,shortDesOne,shortDesTwo,status,statusName,title}= bloglists;
+    
     return (
         <Col>
         <div className="imagBodys">
-            <div className="headingss">
-                <img className='img-fluid hovrBlog' src={Image} alt="" />
-            </div>
-           <Link to={`/blogs/${_id}`}> <h4>{title}</h4></Link>
+        <div className="headings">
+          <Link className="titleLink" to={`/blogs/${_id}`}>
+            <img
+              className="img-fluid homeImage imgRound"
+              src={Image}
+              alt="dynamic-image"
+            />
+          </Link>
+        </div>
+         <div className="titles">
+         <h4>{shortDesOne.slice(0, 30)}</h4>
+         </div>
         </div>
         </Col>
     );

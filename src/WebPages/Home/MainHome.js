@@ -5,18 +5,21 @@ import HomeCarosul from '../Pages/HomeCarosul/HomeCarosul';
 import HomeProductList from '../Pages/HomeShowingProducts/HomeProductList';
 import Information from '../Pages/Shipping_Support/Information';
 import HomeBlogs from '../Pages/Blogs/HomeBlogs/HomeBlogs';
+import ProductCarosul from '../Pages/ProductCarosul/ProductCarosul';
 
 
 const MainHome = () => {
+    const newYear = new Date("June 1, 2023").getTime()
     return (
         <div className='mt-3'>
             <HomeCarosul></HomeCarosul>
             <HomeProductList></HomeProductList>
             <Collections></Collections>
-            <HomeBlogs></HomeBlogs>
-              <DateTimer></DateTimer>
             <Information></Information>
-          
+            <ProductCarosul></ProductCarosul>
+              <DateTimer newYear={newYear}></DateTimer>
+              <HomeBlogs></HomeBlogs>
+            
         </div>
     );
 };

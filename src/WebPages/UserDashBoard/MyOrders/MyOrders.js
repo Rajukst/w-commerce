@@ -79,7 +79,7 @@ const MyOrders = () => {
                       {manageTable?.address}
                       </StyledTableCell>
                       <StyledTableCell align="center">
-                        {manageTable.sku}
+                        {manageTable?.orderStatus}
                       </StyledTableCell>
                       <StyledTableCell align="center">
                         {

@@ -10,6 +10,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { useCityApiQuery } from "../../redux/allFeatures/Auth/authApi";
 import { useRef } from "react";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const CheckoutCreate = () => {
   const addName = useRef();
@@ -23,7 +24,7 @@ const CheckoutCreate = () => {
   const { email } = useSelector((state) => state.auth);
   const { cartItems } = useSelector((state) => state?.carts);
   const { cartTotalAmount } = useSelector((state) => state.carts);
-
+const navigate= useNavigate()
   console.log(cartItems?.product?.qty);
   const { data } = useCityApiQuery();
   console.log(typeof data);
@@ -52,6 +53,7 @@ const CheckoutCreate = () => {
       state,
       zip,
       cartItems,
+      orderStatus:"pending",
     };
 
     fetch("https://service-yvt2.onrender.com/add-order", {
@@ -76,6 +78,7 @@ const CheckoutCreate = () => {
       });
     console.log(e);
     dispatch(clearAllCart());
+    navigate("/")
   };
   return (
     <Container className="mt-5">

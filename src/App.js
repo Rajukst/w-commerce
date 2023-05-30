@@ -79,8 +79,7 @@ function App() {
   position="top-right"
   reverseOrder={true}
 />
-
-     </BrowserRouter>
+</BrowserRouter>
 
     </div>
   );

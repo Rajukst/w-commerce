@@ -3,8 +3,9 @@
 
 ## Technology Used
 
-### React.js
+#### React.js
 ### React-Redux
-### Redux Thunk
+### Redux toolkit
+#### RTK Query
 ### React-Bootstrap
 ### React-Hot Toast

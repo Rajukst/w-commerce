@@ -3,8 +3,7 @@ import { useOrdersQuery } from '../../../redux/allFeatures/orders/orderApi';
 
 const AccountInfo = () => {
     const { data: orders, isLoading, } = useOrdersQuery() || {};
-
-
+    console.log(orders?.name);
     return (
         <div className="AddressInfo">
           <h4>Billing Address</h4>
@@ -23,7 +22,7 @@ const AccountInfo = () => {
                           name=""
                           id=""
                           required
-                        
+                
                         />
                         
                       </div>

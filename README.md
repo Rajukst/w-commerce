@@ -4,8 +4,17 @@
 ## Technology Used
 
 #### React.js
-### React-Redux
-### Redux toolkit
+#### React-Redux
+#### Redux toolkit
 #### RTK Query
-### React-Bootstrap
-### React-Hot Toast
+#### React Hook Form
+#### React slick
+#### Jodit-React
+#### React-Bootstrap
+#### React-Hot Toast
+
+
+## Live Preview link: 
+
+https://eco-cart.netlify.app/
+

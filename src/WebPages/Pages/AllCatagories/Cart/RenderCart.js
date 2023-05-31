@@ -29,8 +29,8 @@ const handleDecrementQty = (cart) => {
                        <img className='cartImage'  src={cart?.product?.image} alt="cartImage" />
                     </div>
                     <div className="Pdetails">
-                        <p>title</p>
-                        <p>sku</p>
+                        <p>{cart?.product?.title}</p>
+                        <p>{cart?.product?.sku}</p>
                         <p>available</p>
                         <button className='removeCrtBtn' onClick={()=>removeItemHandler(cart)}>Remove</button>
                     </div>

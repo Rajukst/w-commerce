@@ -5,8 +5,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import { addToCart } from '../../../../redux/allFeatures/Cart/cartSlice';
 import { toast } from 'react-hot-toast';
 import { addToWishlist } from '../../../../redux/allFeatures/wishlist/wishlistSlice';
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 const SetAllProducts = ({product}) => {
+  AOS.init();
     const {title, regularPrice, _id, salePrice,image}= product|| {};
     const dispatch= useDispatch()
     const navigate = useNavigate();
@@ -28,34 +30,39 @@ const SetAllProducts = ({product}) => {
           <img className="img-fluid homeImage" src={image} alt="dynamic-image" />
           </Link>
           </div>
-            <h6>{title}</h6>
-            <div className="TextBody">
-                <div className="priceOne">
-                <p>${salePrice}</p>   
-                </div>
-                <div className="priceOne">
-                <p className='priceOnes'>${regularPrice}</p>
-                </div>
-            </div>
-            <div className="reviews">
-            <i className="fa-regular fa-star"></i>
-            <i className="fa-regular fa-star"></i>
-            <i className="fa-regular fa-star"></i>
-            <i className="fa-regular fa-star"></i>
-            <i className="fa-regular fa-star"></i>
-            </div>
-            <div className="cartAndOtherBtns">
-            <div className="addToCartButn">
-              <button onClick={()=>handleAddToCart(product)} className=" productsss">
-                <i className="fa-solid fa-cart-shopping pe-2"></i>
-              </button>
-            </div>
-            <div className="addToCartButn">
-              <button onClick={()=>handleWishList(product)} className=" productsss">
-                <i className="fa-regular fa-heart pe-2"></i>
-              </button>
-            </div>
-          </div>
+          <div data-aos="fade-down"
+     data-aos-easing="linear"
+     data-aos-duration="1500">
+ <h6>{title}</h6>
+     <div className="TextBody">
+         <div className="priceOne">
+         <p>${salePrice}</p>   
+         </div>
+         <div className="priceOne">
+         <p className='priceOnes'>${regularPrice}</p>
+         </div>
+     </div>
+     <div className="reviews">
+     <i className="fa-regular fa-star"></i>
+     <i className="fa-regular fa-star"></i>
+     <i className="fa-regular fa-star"></i>
+     <i className="fa-regular fa-star"></i>
+     <i className="fa-regular fa-star"></i>
+     </div>
+     <div className="cartAndOtherBtns">
+     <div className="addToCartButn">
+       <button onClick={()=>handleAddToCart(product)} className=" productsss">
+         <i className="fa-solid fa-cart-shopping pe-2"></i>
+       </button>
+     </div>
+     <div className="addToCartButn">
+       <button onClick={()=>handleWishList(product)} className=" productsss">
+         <i className="fa-regular fa-heart pe-2"></i>
+       </button>
+     </div>
+   </div>   
+</div>
+            
         </div>
         </Col>
         </>

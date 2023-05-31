@@ -45,6 +45,7 @@ const ProductCarosul = () => {
     ],
   };
   return (
+    <div className="headCar">
     <Container className="productCarosul">
       <div>
         <h6 className="pt-5">— New Collection</h6>
@@ -79,6 +80,7 @@ const ProductCarosul = () => {
         </Slider>
       </div>
     </Container>
+    </div>
   );
 };
 

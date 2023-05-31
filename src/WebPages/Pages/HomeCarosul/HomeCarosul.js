@@ -1,41 +1,63 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import "./HomeCarosul.css";
-import carImg from "../../../Assets/Icons/013.png"
+import carImg from "../../../Assets/Icons/013.png";
 import { Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
 const HomeCarosul = () => {
   
+  AOS.init();
   return (
     <>
       <Container fluid className="homeCarsuls mb-2">
-      <Row className="g-4">
-      <Col xs={12} md={6} lg={3} className="left-col">
-      <div className="allCatagoriesss">
-                <div className="listItemsss">
-                 <h5 className="allCatagoris">Catagories</h5>
-                 <Link to="/mens" className="myLink"><h6>Men</h6></Link>
-                <Link to="/womens" className="myLink"> <h6>Women</h6></Link>
-                 <Link to="/boys" className="myLink"><h6>Boys</h6></Link>
-                 <Link to="/girls" className="myLink"><h6>Girls</h6></Link>
-                 <Link className="myLink"><h6>Accessories</h6></Link>
-                <Link className="myLink"> <h6>Footwear</h6></Link>
-                 <Link className="myLink"><h6>Jewellery</h6></Link>
-                </div>
+        <Row className="g-4">
+          <Col xs={12} md={6} lg={3} className="left-col">
+            <div className="allCatagoriesss">
+              <div className="listItemsss">
+                <h5 className="allCatagoris">Catagories</h5>
+                <Link to="/mens" className="myLink">
+                  <h6>Men</h6>
+                </Link>
+                <Link to="/womens" className="myLink">
+                  <h6>Women</h6>
+                </Link>
+                <Link to="/boys" className="myLink">
+                  <h6>Boys</h6>
+                </Link>
+                <Link to="/girls" className="myLink">
+                  <h6>Girls</h6>
+                </Link>
+                <Link className="myLink">
+                  <h6>Accessories</h6>
+                </Link>
+                <Link className="myLink">
+                  <h6>Footwear</h6>
+                </Link>
+                <Link className="myLink">
+                  <h6>Jewellery</h6>
+                </Link>
+              </div>
             </div>
-      </Col>
-      <Col xs={12} md={6} lg={9}>
-      <div className="rightCarosul">
-                <div className="leftText">
-                    <h1>Trendy</h1>
-                    <h1>FASHION</h1>
-                   <Link to="/products"> <button className="shopBTN">Shop Now</button></Link>
+          </Col>
+          <Col xs={12} md={6} lg={9}>
+            <div className="rightCarosul">
+              <div className="leftText">
+                <div data-aos="fade-up" data-aos-duration="3000">
+                  <h1>Trendy</h1>
+                  <h1>FASHION</h1>
+                  <Link to="/products">
+                    <button className="shopBTN">Shop Now</button>
+                  </Link>
                 </div>
-                <div className="rightCar">
-                    <img className="img-fluid" src={carImg} alt="" />
-                </div>
+              </div>
+
+              <div className="rightCar">
+                <img className="img-fluid" src={carImg} alt="" />
+              </div>
             </div>
-      </Col>
-      </Row>
+          </Col>
+        </Row>
       </Container>
     </>
   );

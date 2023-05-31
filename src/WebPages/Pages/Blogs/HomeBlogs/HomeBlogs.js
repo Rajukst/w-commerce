@@ -9,8 +9,8 @@ const {data: blogs}= useFetchBlogsQuery() || {};
     <Container fluid>
       <h6 className="pt-5">— Fashion Blog</h6>
       <h1>Latest News Feed</h1>
-      <Row xs={1} md={3} lg={3} className="g-4">
-        {blogs?.slice(0,3).map((getAllBlogs) => (
+      <Row xs={1} md={4} lg={4} className="g-4">
+        {blogs?.slice(0,4).map((getAllBlogs) => (
           <AllHomeBlogs
             key={getAllBlogs._id}
             blogs={getAllBlogs}

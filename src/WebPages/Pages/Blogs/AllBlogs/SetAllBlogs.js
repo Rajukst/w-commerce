@@ -18,7 +18,7 @@ const SetAllBlogs = ({bloglists}) => {
           </Link>
         </div>
          <div className="titles">
-         <h4>{shortDesOne.slice(0, 30)}</h4>
+         <h4>{shortDesOne?.slice(0, 30)}</h4>
          </div>
         </div>
         </Col>

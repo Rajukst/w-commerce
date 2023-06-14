@@ -10,7 +10,7 @@ import Instagram from '../Pages/Social/Instagram';
 
 
 const MainHome = () => {
-    const newYear = new Date("June 1, 2023").getTime()
+    const newYear = new Date("December 31, 2023").getTime()
     return (
         <div className='mt-3'>
             <HomeCarosul></HomeCarosul>

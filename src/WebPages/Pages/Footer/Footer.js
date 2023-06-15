@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 
 import "./Footer.css";
 const Footer = () => {
@@ -90,6 +91,13 @@ const Footer = () => {
           </Col>
         </Row>
       </Container>
+      <div className="messengerChat">
+      <MessengerCustomerChat
+    pageId="109000364982910"
+    appId="220451756907901"
+  />
+      </div>
+ 
     </div>
   );
 };

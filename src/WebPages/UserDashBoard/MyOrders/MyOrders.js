@@ -8,17 +8,14 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import Swal from "sweetalert2";
-import Pagination from '@mui/material/Pagination';
-import Stack from '@mui/material/Stack';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 const MyOrders = () => {
     const [order, setOrder]= useState([])
-
+    const { email } = useSelector((state) => state.auth);
     useEffect(() => {
-        fetch(`https://service-yvt2.onrender.com/orders`)
+        fetch(`https://service-yvt2.onrender.com/orders?email=${email}`)
           .then((res) => res.json())
           .then((data) => setOrder(data));
       }, []);
@@ -70,7 +67,7 @@ const MyOrders = () => {
                         {index + 1}
                       </StyledTableCell>
                       <StyledTableCell component="th" scope="row">
-                        {manageTable?.emails}
+                        {manageTable?.email}
                       </StyledTableCell>
                       <StyledTableCell align="center">
                         {manageTable.city}

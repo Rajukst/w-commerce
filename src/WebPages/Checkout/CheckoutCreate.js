@@ -37,7 +37,7 @@ const navigate= useNavigate()
   const submitOrder = (e) => {
     e.preventDefault();
     const name = addName.current.value;
-    const emails = addEmail.current.value;
+    // const email = addEmail.current.value;
     const phone = addPhone.current.value;
     const address = addAddress.current.value;
     const city = addCity.current.value;
@@ -46,7 +46,7 @@ const navigate= useNavigate()
 
     const allData = {
       name,
-      emails,
+      email,
       phone,
       address,
       city,
@@ -150,7 +150,7 @@ const navigate= useNavigate()
                           id=""
                           required
                           defaultValue={email}
-                          ref={addEmail}
+                        
                         />
                       </div>
                       <div className="title">

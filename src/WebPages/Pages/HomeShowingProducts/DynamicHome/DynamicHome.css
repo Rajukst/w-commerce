@@ -7,7 +7,7 @@
 }
 .pricesTwo{
     text-decoration: line-through;
-    color: lightgray;
+    color: rgb(179, 0, 0);
 }
 .rightItems *{
     padding-top: 5px;

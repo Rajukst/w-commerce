@@ -1,18 +1,30 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import "./HomeCarosul.css";
-import carImg from "../../../Assets/Icons/013.png";
+import carImgs from "../../../Assets/Icons/edited.png";
+import carImgsTwo from "../../../Assets/Icons/edited2.png";
+import carImgsThree from "../../../Assets/Icons/edited3.png";
 import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Slider from "react-slick";
+import 'animate.css';
 const HomeCarosul = () => {
-  
   AOS.init();
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    fade: true,
+    autoplay: true,
+  };
   return (
     <>
       <Container fluid className="homeCarsuls mb-2">
         <Row className="g-4">
-          <Col xs={12} md={6} lg={3} className="left-col">
+          <Col xs={12} md={3} lg={3} className="left-col">
             <div className="allCatagoriesss">
               <div className="listItemsss">
                 <h5 className="allCatagoris">Catagories</h5>
@@ -41,21 +53,38 @@ const HomeCarosul = () => {
             </div>
           </Col>
           <Col xs={12} md={6} lg={9}>
-            <div className="rightCarosul">
-              <div className="leftText">
-                <div data-aos="fade-up" data-aos-duration="3000">
-                  <h1>Trendy</h1>
-                  <h1>FASHION</h1>
-                  <Link to="/products">
-                    <button className="shopBTN">Shop Now</button>
-                  </Link>
-                </div>
-              </div>
-
-              <div className="rightCar">
-                <img className="img-fluid" src={carImg} alt="" />
-              </div>
+            <div className="backCover">
+            <Slider className="" {...settings}>
+          <div className="slidersImages">
+            <div className="textseffects">
+             <h1>New Arrival</h1>
+             <button className="shopBTN"><Link className="carosulLink" to="/products">Shop Now</Link></button>
             </div>
+            <div className="textseffects">
+             <img src={carImgs} alt="" />
+            </div>
+          </div>
+          <div className="slidersImages">
+            <div className="textseffects">
+            <h1>Exclusive Fashion</h1>
+            <button className="shopBTN"><Link className="carosulLink" to="/products">Shop Now</Link></button>
+            </div>
+            <div className="textseffects">
+            <img src={carImgsTwo} alt="" />
+            </div>
+          </div>
+          <div className="slidersImages">
+            <div className="textseffects">
+            <h1>Wonderfull Collection</h1>
+            <button className="shopBTN"><Link className="carosulLink" to="/products">Shop Now</Link></button>
+            </div>
+            <div className="textseffects">
+            <img src={carImgsThree} alt="" />
+            </div>
+          </div>
+        </Slider>
+            </div>
+         
           </Col>
         </Row>
       </Container>
@@ -65,26 +94,3 @@ const HomeCarosul = () => {
 
 export default HomeCarosul;
 
-/*
-      <Row className="homeCarsulCont mb-5">
-          <Col xs={12} md={4} lg={4} className="firstCol">
-            <div className="allCatagoriesss">
-                <div className="listItemsss">
-                 <p className="allCatagoris">Catagories</p>
-                 <p>Men</p>
-                 <p>Women</p>
-                 <p>Kids</p>
-                 <p>Accessories</p>
-                 <p>Clothing</p>
-                 <p>Bags</p>
-                 <p>Footwear</p>
-                 <p>Watches</p>
-                 <p>Jewellery</p>
-                </div>
-            </div>
-          </Col>
-          <Col xs={12} md={8} lg={8}  className="SecondtCol">
-           
-          </Col>
-        </Row>
-*/

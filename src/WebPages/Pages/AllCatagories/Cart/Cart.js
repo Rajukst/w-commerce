@@ -86,19 +86,18 @@ const Cart = () => {
                           <h6>SubTotal</h6>
                         </div>
                         <div className="subtotalText">
-                          <h6>${cartTotalAmount}</h6>
+                          <h6>Tk {cartTotalAmount}</h6>
                         </div>
                       </div>
                       <div className="delevaryInfo">
-                        <p>(Excluding Delevary)</p>
+                        <p>(Excluding Delevary charge)</p>
                       </div>
-                      {/*  */}
                       <div className="subTotals">
                         <div className="subtotalText">
                           <h6>Total Cost</h6>
                         </div>
                         <div className="subtotalText">
-                          <h6>{cartTotalAmount}/=</h6>
+                          <h6>Tk {cartTotalAmount}</h6>
                         </div>
                       </div>
                     </div>
@@ -109,7 +108,6 @@ const Cart = () => {
                     CheckOut
                   </button>
                   </Link>
-                
                 </div>
               </div>
             </div>

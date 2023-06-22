@@ -36,10 +36,10 @@ const SetAllProducts = ({product}) => {
  <h6>{title}</h6>
      <div className="TextBody">
          <div className="priceOne">
-         <p>${salePrice}</p>   
+         <p>Tk {salePrice}</p>   
          </div>
          <div className="priceOne">
-         <p className='priceOnes'>${regularPrice}</p>
+         <p className='priceOnes'>Tk {regularPrice}</p>
          </div>
      </div>
      <div className="reviews">

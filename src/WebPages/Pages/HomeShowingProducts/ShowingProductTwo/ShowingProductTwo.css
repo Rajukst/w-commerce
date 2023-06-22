@@ -4,7 +4,7 @@
     font-weight: bold;
 }
 .priceOnes{
-    color: lightgray;
+    color: rgb(202, 17, 17);
     text-decoration: line-through;
     -webkit-user-select: none;
 }

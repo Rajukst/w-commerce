@@ -40,9 +40,9 @@ const DynamicHome = () => {
                   <i class="fa-solid fa-star"></i>
                 </div>
                 <div className="prices">
-                  <h3>${product?.salePrice}</h3>
-                  <h5 className="mt-2 ps-4 pricesTwo">
-                    ${product?.regularPrice}
+                  <h3>Tk {product?.salePrice}</h3>
+                  <h5 className="mt-2 ps-4 pricesTwo priceOnes">
+                    Tk {product?.regularPrice}
                   </h5>
                 </div>
                 <div className="availablity">

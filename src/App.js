@@ -31,7 +31,6 @@ import WishList from './WebPages/Pages/AllCatagories/WishList/WishList';
 import Womens from './WebPages/Pages/AllCatagories/Womens/Womens';
 import Boys from './WebPages/Pages/AllCatagories/Boys/Boys';
 import Girls from './WebPages/Pages/AllCatagories/Girls/Girls';
-import MessengerCustomerChat from 'react-messenger-customer-chat';
 
 function App() {
 
@@ -80,10 +79,6 @@ function App() {
   position="top-right"
   reverseOrder={true}
 />
-<MessengerCustomerChat
-    pageId="109000364982910"
-    appId="220451756907901"
-  />
 </BrowserRouter>
 
     </div>

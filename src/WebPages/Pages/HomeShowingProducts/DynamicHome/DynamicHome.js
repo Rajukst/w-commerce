@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { useProductsByIdQuery } from "../../../../redux/allFeatures/products/productApi";
 import { addToCart } from "../../../../redux/allFeatures/Cart/cartSlice";
 import { toast } from "react-hot-toast";
+import { addToWishlist } from "../../../../redux/allFeatures/wishlist/wishlistSlice";
 
 const DynamicHome = () => {
   const { id } = useParams();
@@ -19,6 +20,11 @@ const DynamicHome = () => {
     toast.success("Cart added successfully");
     navigate("/cart");
   };
+   // here is where the product is added to the wishlist
+   const handleWishList=(product)=>{
+    dispatch(addToWishlist(product))
+    navigate("/wishlist")
+  }
   return (
     <>
       <div className="main-containers">
@@ -79,14 +85,6 @@ const DynamicHome = () => {
                     />
                     <button className="cartButtons">+</button>
                   </div>
-                  <div className="selectedItems">
-                    <div class="dropdown">
-                      <button>HubSpot Resources</button>
-                      <div class="dropdown-content">
-                        
-                      </div>
-                    </div>
-                  </div>
                 </div>
                 <div className="cartAndOtherBtnss">
                   <div className="addToCartButnss">
@@ -99,7 +97,7 @@ const DynamicHome = () => {
                     </button>
                   </div>
                   <div className="addToWishButnses">
-                    <button className="mt-5 productBTNsw">
+                    <button onClick={()=>handleWishList(product)} className="mt-5 productBTNsw">
                       <i className="fa-regular fa-heart pe-2"></i>Add To
                       WishList
                     </button>

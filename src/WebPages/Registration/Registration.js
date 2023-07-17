@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm, useWatch } from "react-hook-form";
 import { toast } from "react-hot-toast";
@@ -9,6 +9,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createUser, googleLogin } from "../../redux/allFeatures/Auth/authSlice";
+import { useRegisterMutation } from "../../redux/allFeatures/Auth/authApi";
 const Registration = () => {
   const {register, control, handleSubmit,reset,} = useForm();
 const password= useWatch({control, name: "password"})
@@ -16,6 +17,7 @@ const confirmPassword= useWatch({control, name: "confirmPassword"})
 const navigate= useNavigate();
 const [disabled, setDisabled]= useState(true);
 const {isLoading, email, isError, error}= useSelector(state=>state.auth)
+const [postUser]= useRegisterMutation()
 const dispatch= useDispatch()
 useEffect(()=>{
   if(
@@ -24,7 +26,7 @@ useEffect(()=>{
       confirmPassword !== undefined &&
       confirmPassword !== "" &&
       password === confirmPassword
-  )
+)
   {
     setDisabled(false)
   }else{
@@ -40,7 +42,9 @@ useEffect(()=>{
   const registerSubmit = (e) => {
     console.log(e);
     dispatch(createUser({email:e.email, password:e.password}))
+    postUser({...e, role: "user"})
     reset()
+    navigate("/")
   };
   const handleGoogleSignUp=()=>{
     dispatch(googleLogin())

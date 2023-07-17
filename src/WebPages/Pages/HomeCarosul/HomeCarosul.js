@@ -14,7 +14,7 @@ const HomeCarosul = () => {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 500,
+    speed: 50,
     slidesToShow: 1,
     slidesToScroll: 1,
     fade: true,

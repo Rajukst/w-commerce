@@ -3,7 +3,6 @@ import { Container} from "react-bootstrap";
 import "./ProductCarosul.css";
 import Slider from "react-slick";
 import { useProductsQuery } from "../../../redux/allFeatures/products/productApi";
-import CarosulTwo from "./CarosulTwo";
 import { Link } from "react-router-dom";
 
 const ProductCarosul = () => {
@@ -68,10 +67,10 @@ const ProductCarosul = () => {
               <div className="hoversBody">
                 <div className="TextBody">
                   <div className="priceOne">
-                    <p>${getProduct?.salePrice}</p>
+                    <p>Tk {getProduct?.salePrice}</p>
                   </div>
                   <div className="priceOne">
-                    <p className="priceOnes">${getProduct?.regularPrice}</p>
+                    <p className="priceOnes">Tk {getProduct?.regularPrice}</p>
                   </div>
                 </div>
               </div>

@@ -23,7 +23,7 @@ const handleCommentSubmit=e=>{
     const comment = addComment.current.value;
     const totalComment={name, email, comment}
     console.log(totalComment);
-    fetch("https://service-yvt2.onrender.com/add-comment", {
+    fetch("https://ecocart.onrender.com/add-comment", {
       method: "POST",
       headers: {
         "content-type": "application/json",

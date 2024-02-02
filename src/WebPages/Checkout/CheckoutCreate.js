@@ -56,7 +56,7 @@ const navigate= useNavigate()
       orderStatus:"pending",
     };
 
-    fetch("https://service-yvt2.onrender.com/add-order", {
+    fetch("https://ecocart.onrender.com/add-order", {
       method: "POST",
       headers: {
         "content-type": "application/json",

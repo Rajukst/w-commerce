@@ -15,7 +15,7 @@ const MyOrders = () => {
     const [order, setOrder]= useState([])
     const { email } = useSelector((state) => state.auth);
     useEffect(() => {
-        fetch(`https://service-yvt2.onrender.com/orders?email=${email}`)
+        fetch(`https://ecocart.onrender.com/orders?email=${email}`)
           .then((res) => res.json())
           .then((data) => setOrder(data));
       }, []);
